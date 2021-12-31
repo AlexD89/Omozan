@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+    skip_before_action :verify_authenticity_token
+
     helper_method :logged_in?, :current_user
 
     def current_user
@@ -7,7 +9,7 @@ class ApplicationController < ActionController::Base
 
     def ensure_logged_in
         unless logged_in?
-            render json: "User is not logged in", status: 422
+            render json: ["User not found"], status: 404
         end
     end
 
@@ -16,7 +18,7 @@ class ApplicationController < ActionController::Base
     end
 
     def logout!
-        current_user.reset_session_token!
+        current_user.reset_session_token! if logged_in?
         session[:session_token] = nil
         @current_user = nil
     end
