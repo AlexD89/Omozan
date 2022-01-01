@@ -8,7 +8,7 @@ header {
 }
 
 .nav-bar {
-    border: 2px solid black;
+    border: 2px solid #131a22;
     display: flex;
     justify-content: space-between;
 }
@@ -23,7 +23,7 @@ header {
 
 .categories ul {
     height: 30px;
-    background-color: rgb(52, 52, 69);
+    background-color: #232f3e;
     border: black 2px solid;
     display: flex;
     justify-content: space-around;
@@ -35,4 +35,5 @@ header {
 
 .categories ul li:hover {
     border: whitesmoke 1px solid;
+    cursor: pointer;
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import img from "/app/assets/images/logo.png"
+import logoImg from "/app/assets/images/logo.png"
 
 class Navbar extends React.Component {
 
@@ -33,7 +33,7 @@ class Navbar extends React.Component {
         return(
             <header>
                 <div className="nav-bar">
-                    <img src={img} alt="logo" className="header-logo" />
+                    <img src={logoImg} alt="logo" className="header-logo" />
                     <div className="search-bar">
                         <input type="text" />
                     </div>
@@ -49,7 +49,6 @@ class Navbar extends React.Component {
                         <li>Home Improvment</li>
                     </ul>
                 </div>
-
             </header>
         )
     }

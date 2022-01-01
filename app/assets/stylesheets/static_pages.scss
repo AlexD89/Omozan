@@ -5,8 +5,13 @@
 @import "./css_reset.scss";
 @import "./login.scss";
 @import "./header.scss";
+@import "./splash.scss";
 
 html {
     height: 100%;
+    // background-color: whitesmoke;
 }
 
+body {
+    background-image: linear-gradient(to bottom, #febd69, whitesmoke );
+}
