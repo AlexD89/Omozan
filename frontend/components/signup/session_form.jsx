@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logoImg from "/app/assets/images/dark-logo.png"
 
 class SessionForm extends React.Component {
     constructor(props){
@@ -14,14 +15,24 @@ class SessionForm extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.processForm(this.state);
-    } 
+    }
+    
+    handleDemoUser = (e) => {
+        e.preventDefault()
+        const demoUser = {
+            username: "Demo User",
+            email: "demo_user@gmail.com",
+            password: "demo_user_3000"
+        }
+        this.props.processForm(demoUser);
+    }
 
     render(){
         const { errors, formType } = this.props;
         return(
             <div className="signup-form">
                 <Link to="/">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/320px-Amazon_logo.svg.png" alt="" />
+                    <img src={logoImg} alt="logo" />
                 </Link>
                 <br />
                 <div className="form-box">
@@ -54,6 +65,7 @@ class SessionForm extends React.Component {
                             type="submit" 
                             value={formType === "Login" ? "Sign-in" : "Create your Amazon account"} />
                     </form>
+                    <button onClick={this.handleDemoUser}>Demo User</button>
                     <br />
                     {errors}
                 </div>
