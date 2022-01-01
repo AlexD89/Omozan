@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SerchBarContainer from "../searchbar/serchbar_container";
 import logoImg from "/app/assets/images/logo.png"
+import cartImg from "/app/assets/images/cart.png"
 
 class Navbar extends React.Component {
 
@@ -21,8 +23,8 @@ class Navbar extends React.Component {
                 <div>
                     Hello, Sign in
                     <br />
-                    <Link to="/signup">
-                        <button>Signup</button>
+                    <Link to="/login">
+                        <button>Login</button>
                     </Link>
                 </div>
             )
@@ -34,11 +36,15 @@ class Navbar extends React.Component {
             <header>
                 <div className="nav-bar">
                     <img src={logoImg} alt="logo" className="header-logo" />
-                    <div className="search-bar">
-                        <input type="text" />
+                    <div>
+                        <SerchBarContainer />
                     </div>
                     <div className="login-button">
                         {this.display()}
+                    </div>
+                    <div>
+                        <img src={cartImg} alt="cart" className="cart-image"/>
+                        Cart
                     </div>
                 </div>
                 <div className="categories">

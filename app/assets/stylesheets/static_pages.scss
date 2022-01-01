@@ -2,16 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-@import "./css_reset.scss";
-@import "./login.scss";
-@import "./header.scss";
-@import "./splash.scss";
+
+
+@import "./css_reset.css";
+@import "./login.css";
+@import "./header.css";
+@import "./splash.css";
 
 html {
-    height: auto;
-    // background-color: whitesmoke;
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  background-color: whitesmoke;
 }
 
-body {
-    background-image: linear-gradient(to bottom, #febd69, whitesmoke );
-}
+

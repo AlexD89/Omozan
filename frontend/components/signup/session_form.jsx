@@ -65,7 +65,9 @@ class SessionForm extends React.Component {
                             type="submit" 
                             value={formType === "Login" ? "Sign-in" : "Create your Amazon account"} />
                     </form>
-                    <button onClick={this.handleDemoUser}>Demo User</button>
+                    {formType === "Login" ? (
+                        <button onClick={this.handleDemoUser}>Demo User</button>
+                    ) : ("")}
                     <br />
                     {errors}
                 </div>
