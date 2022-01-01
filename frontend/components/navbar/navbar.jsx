@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import img from "/app/assets/images/logo.png"
 
 class Navbar extends React.Component {
 
@@ -32,7 +33,7 @@ class Navbar extends React.Component {
         return(
             <header>
                 <div className="nav-bar">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/320px-Amazon_logo.svg.png" alt="logo" />
+                    <img src={img} alt="logo" className="header-logo" />
                     <div className="search-bar">
                         <input type="text" />
                     </div>

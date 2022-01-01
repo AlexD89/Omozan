@@ -1,3 +1,12 @@
+header {
+    background-color: #121717;
+    color: whitesmoke;
+}
+
+.header-logo {
+    height: 50px;
+}
+
 .nav-bar {
     border: 2px solid black;
     display: flex;
@@ -6,13 +15,24 @@
 
 .search-bar {
     width: 200px;
-    height: 50px;
 }
 
 .login-button {
     border: 1px solid black;
 }
 
-.categories ul{
+.categories ul {
+    height: 30px;
+    background-color: rgb(52, 52, 69);
+    border: black 2px solid;
     display: flex;
+    justify-content: space-around;
+}
+
+.categories ul li {
+    padding: 5px;
+}
+
+.categories ul li:hover {
+    border: whitesmoke 1px solid;
 }
