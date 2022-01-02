@@ -4,12 +4,17 @@
     align-items: center;
     background-color: white;
     padding: 30px 0;
+    font-family: sans-serif;
+}
+
+.signup-form img {
+    height: 35px;
 }
 
 .form-box {
-    border: 1px solid grey;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    width: 250px;
+    width: 300px;
     padding: 20px 20px;
     margin-bottom: 20px;
     display: flex;
@@ -17,20 +22,29 @@
 }
 
 .form-box input {
-    margin: 5px 0;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.form-box h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
 }
 
 .form-box input[type="text"], .form-box input[type="password"] {
-    border: 1px solid black;
+    border: 1px solid #a6a6a6;
+    border-color: #949494;
+    padding-left: 10px;
     border-radius: 4px;
     height: 30px;
-    width: 95%;
+    width: 94%;
 }
 
 .form-box button, .form-box input[type="submit"] {
     height: 30px;
     width: 100%;
     border: 1px solid black;
+    border-color: #a88734 #9c7e31 #846a29;
     border-radius: 4px;
     background-color: #f0c14b;
     cursor: pointer;
@@ -38,4 +52,28 @@
 
 .form-box button:hover, .form-box input[type="submit"]:hover {
     background-color: #c9a039;
+}
+
+.form-box span {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.divider {
+    width: 340px;
+    height: 1px;
+    border-top: 1px #ddd solid;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: #767676;
+    text-align: center;
+}
+
+.divider h5 {
+    background-color: white;
+    display: inline-block;
+    position: relative;
+    bottom: 9px;
+    font-size: 13px;
+    padding: 0 6px;    
 }

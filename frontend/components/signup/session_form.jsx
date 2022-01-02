@@ -36,10 +36,10 @@ class SessionForm extends React.Component {
                 </Link>
                 <br />
                 <div className="form-box">
-                    <h1>{formType === "login" ? "Sign-in" : "Create account"}</h1>
+                    <h1>{formType === "Login" ? "Sign-in" : "Create account"}</h1>
                     <form onSubmit={this.handleSubmit}>
                         {formType === "Signup" ? (
-                            <label>Your name
+                            <label><span>Your name</span>
                                 <br />
                                 <input
                                     type="text"
@@ -47,14 +47,14 @@ class SessionForm extends React.Component {
                                 <br />
                             </label>) : ("")
                         }
-                        <label>Email
+                        <label><span>Email</span>
                             <br />
                             <input 
                                 type="text"
                                 onChange={(e) => this.setState({email: e.currentTarget.value})} />
                         </label>
                         <br />
-                        <label>Password
+                        <label><span>Password</span>
                             <br />
                             <input
                                 type="password"
@@ -71,6 +71,13 @@ class SessionForm extends React.Component {
                     ) : ("")}
                     <br />
                     {errors}
+                </div>
+                <div className="divider">
+                    {formType === "Login" ? (
+                            <h5> New to Amazon ?</h5>
+                        ) : (
+                            <h5> Have an account ?</h5>
+                        )}
                 </div>
                 {formType === "Login" ? (
                     <Link to="/signup">
