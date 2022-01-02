@@ -1,14 +1,44 @@
 .splash-tabs {
-    padding-top: 100px;
+    padding-top: 250px;
+    padding-bottom: 40px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-image: linear-gradient(to bottom, rgb(130, 171, 222), whitesmoke);
 }
 
-.splash-tabs div {
+.splash-tabs > div {
     background-color: white;
     margin: 10px;
+    padding: 20px;
     width: 20%;
-    height: 400px;
+    height: 360px;
+}
+
+.splash-background {
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+}
+
+.img-box {
+    height: 250px;
+    width: 100%;
+    margin: 15px 0;
+    position: relative;
+}
+
+.img-box img {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.splash-tabs h3 {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 22px;
 }

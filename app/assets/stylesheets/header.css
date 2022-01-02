@@ -5,21 +5,13 @@ header {
     color: whitesmoke;
 }
 
-.header-logo img{
+.header-logo img, .cart-image{
     height: 30px;
 }
 
-.header-logo {
+.header-logo, .login-button, .cart-button {
     border: 1px solid transparent;
     padding: 10px;
-}
-
-.header-logo:hover {
-    border: 1px solid whitesmoke;
-}
-
-.cart-image {
-    height:  35px;
 }
 
 .nav-bar {
@@ -28,7 +20,6 @@ header {
     justify-content: space-between;
     align-items: center;
 }
-
 
 .categories ul {
     height: 30px;
@@ -43,18 +34,12 @@ header {
     margin: 2px 0;
 }
 
-.categories ul li:hover {
+.categories ul li:hover, 
+.login-button:hover, 
+.header-logo:hover, 
+.cart-button:hover {
     border: whitesmoke 1px solid;
     cursor: pointer;
-}
-
-.login-button {
-    padding: 10px;
-    border: 1px solid transparent;
-}
-
-.login-button:hover {
-    border: 1px solid whitesmoke;
 }
 
 .login-button-link {
