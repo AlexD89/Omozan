@@ -5,8 +5,17 @@ header {
     color: whitesmoke;
 }
 
+.header-logo img{
+    height: 30px;
+}
+
 .header-logo {
-    height: 50px;
+    border: 1px solid transparent;
+    padding: 10px;
+}
+
+.header-logo:hover {
+    border: 1px solid whitesmoke;
 }
 
 .cart-image {
@@ -20,27 +29,39 @@ header {
     align-items: center;
 }
 
-.search-bar {
-    width: 200px;
-}
-
-.login-button {
-    border: 1px solid black;
-}
 
 .categories ul {
     height: 30px;
     background-color: #232f3e;
-    border: black 2px solid;
     display: flex;
     justify-content: space-around;
 }
 
 .categories ul li {
+    border: 1px solid transparent;
     padding: 5px;
+    margin: 2px 0;
 }
 
 .categories ul li:hover {
     border: whitesmoke 1px solid;
     cursor: pointer;
+}
+
+.login-button {
+    padding: 10px;
+    border: 1px solid transparent;
+}
+
+.login-button:hover {
+    border: 1px solid whitesmoke;
+}
+
+.login-button-link {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.login-button span {
+    font-weight: bold;
 }

@@ -11,11 +11,11 @@ class Navbar extends React.Component {
         if (currentUser){
             return(
                 <div onClick={e=>logout()}>
-                    {/* <button onClick={e=>logout()}> */}
-                        {`Hello, ${currentUser.username}`}
-                        <br />
+                    {`Hello, ${currentUser.username}`}
+                    <br />
+                    <span>
                         Logout
-                    {/* </button> */}
+                    </span>
                 </div>
             )
         } else {
@@ -23,9 +23,9 @@ class Navbar extends React.Component {
                 <div>
                     Hello, Sign in
                     <br />
-                    <Link to="/login">
-                        <button>Login</button>
-                    </Link>
+                    <span>
+                        Acount
+                    </span>
                 </div>
             )
         }
@@ -35,13 +35,19 @@ class Navbar extends React.Component {
         return(
             <header>
                 <div className="nav-bar">
-                    <img src={logoImg} alt="logo" className="header-logo" />
+                    <div className="header-logo">
+                        <Link to="/" >
+                            <img src={logoImg} alt="logo" />
+                        </Link>
+                    </div>
                     <div>
                         <SerchBarContainer />
                     </div>
-                    <div className="login-button">
-                        {this.display()}
-                    </div>
+                    <Link to="/login" className="login-button-link">
+                        <div className="login-button">
+                            {this.display()}
+                        </div>
+                    </Link>
                     <div>
                         <img src={cartImg} alt="cart" className="cart-image"/>
                         Cart

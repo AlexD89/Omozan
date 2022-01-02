@@ -16,6 +16,14 @@
     flex-direction: column;
     align-items: center;
 }
+
 .form-box form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 80%;
+}
+
+.form-box input {
+    width: 100%;
 }

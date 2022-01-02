@@ -3,12 +3,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-image: linear-gradient(to bottom, rgb(130, 171, 222), white);
+    background-image: linear-gradient(to bottom, rgb(130, 171, 222), whitesmoke);
 }
 
 .splash-tabs div {
-    border: black 1px solid;
-    background-color: whitesmoke;
+    background-color: white;
     margin: 10px;
     width: 20%;
     height: 400px;
