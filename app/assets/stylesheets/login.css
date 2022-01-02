@@ -63,7 +63,7 @@
     width: 340px;
     height: 1px;
     border-top: 1px #ddd solid;
-    margin-top: 10px;
+    margin-top: 8px;
     margin-bottom: 30px;
     color: #767676;
     text-align: center;
@@ -76,4 +76,14 @@
     bottom: 9px;
     font-size: 13px;
     padding: 0 6px;    
+}
+
+.signup-form :last-child button {
+    height: 30px;
+    width: 330px;
+}
+
+.signup-form {
+    border-bottom: 2px black solid;
+    border-image: linear-gradient(to right, white, rgb(224, 216, 216), white) 1;
 }
