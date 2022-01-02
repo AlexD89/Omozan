@@ -36,6 +36,7 @@ class SessionForm extends React.Component {
                 </Link>
                 <br />
                 <div className="form-box">
+                    <h1>{formType === "login" ? "Sign-in" : "Create account"}</h1>
                     <form onSubmit={this.handleSubmit}>
                         {formType === "Signup" ? (
                             <label>Your name
