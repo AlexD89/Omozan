@@ -70,3 +70,12 @@ smart_plug = {
     category: "Amazon Home",
     price: 12.99
 }
+
+Product.create!(mac_book)
+Product.create!(atomic_habits)
+Product.create!(bose_45)
+Product.create!(dewalt_kit)
+Product.create!(sm_movie)
+Product.create!(bowflex)
+Product.create!(echo_glow)
+Product.create!(smart_plug)
