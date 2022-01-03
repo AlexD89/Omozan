@@ -11,6 +11,10 @@ class SessionForm extends React.Component {
         }
     }
 
+    componentWillUnmount(){
+        this.props.clearErrors()
+    }
+
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.processForm(this.state);
@@ -28,8 +32,8 @@ class SessionForm extends React.Component {
 
     renderErrors = () => (
         <ul>
-            {this.props.errors.map(error => (
-                <li>{error}</li>
+            {this.props.errors.map((error, i) => (
+                <li key={i}>{error}</li>
             ))}
         </ul>
     )
