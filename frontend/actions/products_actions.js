@@ -13,7 +13,7 @@ const receiveProduct = product => ({
     product
 })
 
-export const requestProducts = () => dispatch => (
+export const requestAllProducts = () => dispatch => (
     ProductsApiUtils.fetchAllProducts()
         .then((products) => dispatch(receiveAllProducts(products)))
 )

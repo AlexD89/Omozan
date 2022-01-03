@@ -1,6 +1,6 @@
 import { RECEIVE_ALL_PRODUCTS, RECEIVE_PRODUCT } from "../actions/products_actions";
 
-const ProductsReducer = (state = {}, action) => {
+const productsReducer = (state = {}, action) => {
     Object.freeze(state);
     const nextState = Object.assign({}, state);
 
@@ -14,4 +14,4 @@ const ProductsReducer = (state = {}, action) => {
     }
 }
 
-export default ProductsReducer;
+export default productsReducer;

@@ -6,6 +6,7 @@ class Api::ProductsController < ApplicationController
             render :index
         else
             render json: ["No products"], status: 404
+        end
     end
 
     def show
@@ -14,5 +15,6 @@ class Api::ProductsController < ApplicationController
             render :show
         else
             render json: ["Product is not found"], status: 404
+        end
     end
 end

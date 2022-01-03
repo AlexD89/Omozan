@@ -4,6 +4,7 @@ import configureStore from "./store/store";
 import Root from "./components/root";
 //Testing
 import { login, logout, signup } from "./actions/session_actions";
+import { requestProduct, requestAllProducts } from "./actions/products_actions"
 //testing
 
 document.addEventListener("DOMContentLoaded",()=>{
@@ -28,6 +29,9 @@ document.addEventListener("DOMContentLoaded",()=>{
     window.signup = signup;
     window.login = login;
     window.logout = logout;
+
+    window.requestAllProducts = requestAllProducts;
+    window.requestProduct = requestProduct;
     //Testing Area
 
     ReactDOM.render(<Root store={store} />, document.getElementById("root"));
