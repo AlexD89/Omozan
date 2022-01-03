@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
-import logoImg from "/app/assets/images/dark-logo.png"
 
 class SessionForm extends React.Component {
     constructor(props){
