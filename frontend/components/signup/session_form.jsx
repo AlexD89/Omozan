@@ -40,7 +40,7 @@ class SessionForm extends React.Component {
         return(
             <div className="signup-form">
                 <Link to="/">
-                    <img src={window.darkLogoURL} alt="logo" />
+                    <img src={window.darkLogoURL} />
                 </Link>
                 <br />
                 <div className="form-box">
