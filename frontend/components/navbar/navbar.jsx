@@ -55,6 +55,7 @@ class Navbar extends React.Component {
                 </div>
                 <div className="categories">
                     <ul>
+                        <li>All</li>
                         <li>Computers</li>
                         <li>Electronics</li>
                         <li>Amazon Home</li>

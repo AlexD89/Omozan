@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import logoImg from "/app/assets/images/dark-logo.png"
 
 class SessionForm extends React.Component {
@@ -22,10 +22,18 @@ class SessionForm extends React.Component {
         const demoUser = {
             username: "Demo User",
             email: "demo_user@gmail.com",
-            password: "demo_user_3000"
+            password: "demo_user_3000",
         }
         this.props.processForm(demoUser);
     }
+
+    renderErrors = () => (
+        <ul>
+            {this.props.errors.map(error => (
+                <li>{error}</li>
+            ))}
+        </ul>
+    )
 
     render(){
         const { errors, formType } = this.props;
@@ -70,7 +78,7 @@ class SessionForm extends React.Component {
                         <button onClick={this.handleDemoUser}>Demo User</button>
                     ) : ("")}
                     <br />
-                    {errors}
+                    {this.renderErrors()}
                 </div>
                 <div className="divider">
                     {formType === "Login" ? (
@@ -80,7 +88,7 @@ class SessionForm extends React.Component {
                         )}
                 </div>
                 {formType === "Login" ? (
-                    <Link to="/signup">
+                    <Link to="/signup" >
                         <button>Create your Amazon Account</button>
                     </Link>
                 ) : (
