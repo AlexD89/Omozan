@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SerchBarContainer from "../searchbar/serchbar_container";
-import logoImg from "/app/assets/images/logo.png"
-import cartImg from "/app/assets/images/cart.png"
+
 
 class Navbar extends React.Component {
 
@@ -37,7 +36,7 @@ class Navbar extends React.Component {
                 <div className="nav-bar">
                     <div className="header-logo">
                         <Link to="/" >
-                            <img src={logoImg} alt="logo" />
+                            <img src={window.logoURL} alt="logo" />
                         </Link>
                     </div>
                     <div>
@@ -49,7 +48,7 @@ class Navbar extends React.Component {
                         </div>
                     </Link>
                     <div className="cart-button">
-                        <img src={cartImg} alt="cart" className="cart-image"/>
+                        <img src={window.cartURL} alt="cart" className="cart-image"/>
                         Cart
                     </div>
                 </div>

@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "/app/assets/images/logo.png"
 
 const Footer = () => {
     return (
@@ -10,7 +9,7 @@ const Footer = () => {
                 </div>
             </a>
             <div className="footer-links">
-                <img src={logo} alt="logo" />
+                <img src={window.logoURL} alt="logo" />
             </div>
         </div>
     )
