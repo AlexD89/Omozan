@@ -22,15 +22,16 @@ header {
 }
 
 .categories ul {
-    height: 30px;
+    height: 35px;
     background-color: #232f3e;
     display: flex;
+    align-content: center;
     justify-content: space-around;
 }
 
 .categories ul li {
     border: 1px solid transparent;
-    padding: 5px;
+    padding: 5px 10px;
     margin: 2px 0;
 }
 

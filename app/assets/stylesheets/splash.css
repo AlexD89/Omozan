@@ -6,12 +6,15 @@
     justify-content: center;
 }
 
-.splash-tabs > div {
+.splash-tab {
     background-color: white;
     margin: 10px;
     padding: 20px;
     width: 20%;
     height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .splash-background {
@@ -24,7 +27,6 @@
 .img-box {
     height: 250px;
     width: 100%;
-    margin: 15px 0;
     position: relative;
 }
 
@@ -41,4 +43,8 @@
     font-family: sans-serif;
     font-weight: bold;
     font-size: 22px;
+}
+
+.splash-tab a {
+    color: #007eb9;
 }

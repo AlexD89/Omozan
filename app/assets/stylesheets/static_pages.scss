@@ -8,6 +8,7 @@
 @import "./login.css";
 @import "./header.css";
 @import "./splash.css";
+@import "./footer.css";
 
 html {
   height: 100%;
@@ -17,4 +18,8 @@ body {
   background-color: #EAEDED;
 }
 
-
+a {
+  text-decoration: none;
+  color: inherit;
+  font-family: sans-serif;
+}
