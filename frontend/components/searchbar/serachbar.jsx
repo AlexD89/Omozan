@@ -7,7 +7,7 @@ class Searchbar extends React.Component {
         return(
             <div className="search-bar">
                 <input type="search" placeholder="Search Bar"/>
-                <input type="image" src={window.splashLogoURL} alt="search-image" />
+                <input type="image" src={window.glassIconURL} alt="search-image" />
             </div>
         )
     }

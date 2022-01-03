@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import splashBG from "/app/assets/images/splash-logo.jpg"
 import img1 from "/app/assets/images/splash-tabs/img1.jpg"
 import img2 from "/app/assets/images/splash-tabs/img2.jpg"
 import img3 from "/app/assets/images/splash-tabs/img3.jpg"
@@ -14,7 +13,7 @@ class Splash extends React.Component {
     render(){
         return(
             <div className="splah">
-                <img src={splashBG} className="splash-background" />
+                <img src={window.splashLogoURL} className="splash-background" />
                 <ul className="splash-tabs">
                     <div className="splash-tab">
                         <h3>Multicolor smart lamp for kids</h3>
