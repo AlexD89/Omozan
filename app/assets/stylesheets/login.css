@@ -88,3 +88,8 @@
     border-bottom: 2px black solid;
     border-image: linear-gradient(to right, white, rgb(224, 216, 216), white) 1;
 }
+
+.session-errors {
+    color: red;
+    list-style-type: disc;
+}

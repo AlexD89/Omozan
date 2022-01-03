@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class SessionForm extends React.Component {
     constructor(props){
@@ -7,7 +7,8 @@ class SessionForm extends React.Component {
         this.state = {
             username: "",
             email: "",
-            password: ""
+            password: "",
+            password_confirmation: ""
         }
     }
 
@@ -31,9 +32,9 @@ class SessionForm extends React.Component {
     }
 
     renderErrors = () => (
-        <ul>
+        <ul className="session-errors">
             {this.props.errors.map((error, i) => (
-                <li key={i}>{error}</li>
+                <li key={i} >{error}</li>
             ))}
         </ul>
     )
@@ -73,6 +74,15 @@ class SessionForm extends React.Component {
                                 placeholder={formType === "Login" ? "" : "At least 6 characters"} />
                         </label>
                         <br />
+                        {formType === "Signup" ? (
+                            <label><span>Confirm Password</span>
+                                <br />
+                                <input
+                                    type="password"
+                                    onChange={(e) => this.setState({ password_confirmation: e.currentTarget.value })} />
+                                <br />
+                            </label>) : ("")
+                        }
                         <input 
                             type="submit" 
                             value={formType === "Login" ? "Sign-in" : "Create your Amazon account"} />
