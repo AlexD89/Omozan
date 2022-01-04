@@ -1,7 +1,7 @@
 import React from "react";
-import ProductsItem from "./product_item";
+import ProductsIndexItem from "./product_index_item";
 
-class Products extends React.Component {
+class ProductsIndex extends React.Component {
 
     componentDidMount(){
         this.props.requestAllProducts();
@@ -13,7 +13,7 @@ class Products extends React.Component {
             <div>
                 <ul>
                     {products.map((product) => (
-                        <ProductsItem product={product} key={product.id} />
+                        <ProductsIndexItem product={product} key={product.id} />
                     ))}
                 </ul>
             </div>
@@ -21,4 +21,4 @@ class Products extends React.Component {
     }
 }
 
-export default Products;
+export default ProductsIndex;

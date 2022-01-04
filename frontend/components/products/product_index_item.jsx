@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-class ProductsItem extends React.Component {
+class ProductsIndexItem extends React.Component {
     render(){
         return <div>
             <li>
@@ -13,4 +13,4 @@ class ProductsItem extends React.Component {
     }
 }
 
-export default ProductsItem;
+export default ProductsIndexItem;
