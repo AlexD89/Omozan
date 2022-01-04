@@ -5,7 +5,8 @@ class ProductsShow extends React.Component {
     render(){
         return(
             <div>
-                show container
+                {this.props.product.title}
+                <br />
                 <Link to="/products/">Index</Link>
             </div>
         )

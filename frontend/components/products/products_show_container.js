@@ -5,8 +5,5 @@ const mapStateToProps = (state, ownProps) => ({
     product: state.entities.products[ownProps.match.params.productId]
 })
 
-const mapDispatchToProps = dispatch => ({
 
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(ProductsShow)
+export default connect(mapStateToProps, null)(ProductsShow)
