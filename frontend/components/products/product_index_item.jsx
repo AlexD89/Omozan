@@ -3,14 +3,15 @@ import { Link } from "react-router-dom";
 
 class ProductsIndexItem extends React.Component {
     render(){
+        const product = this.props;
         return <div className="product-tab">
-            {/* <li> */}
-                <Link to={`/products/${this.props.product.id}`}>
-                    <div>
-
-                    </div>
-                </Link>
-            {/* </li> */}
+            <Link to={`/products/${this.props.product.id}`}>
+                <div>
+                    {this.props.product.title}
+                    <br />
+                    {this.props.product.price}
+                </div>
+            </Link>
         </div>
     }
 }
