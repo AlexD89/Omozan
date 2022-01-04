@@ -11,7 +11,7 @@ class ProductsIndex extends React.Component {
         const { products } = this.props;
         return(
             <div>
-                <ul>
+                <ul className="product-grid">
                     {products.map((product) => (
                         <ProductsIndexItem product={product} key={product.id} />
                     ))}

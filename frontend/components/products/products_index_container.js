@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { requestAllProducts } from "../../actions/products_actions";
-import ProductsIndex from "./products_ndex";
+import ProductsIndex from "./products_index";
 
 
 const mapStateToProps = state => ({
