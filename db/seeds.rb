@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'open-uri'
+
 User.destroy_all
 Product.destroy_all
 
@@ -79,3 +81,5 @@ Product.create!(sm_movie)
 Product.create!(bowflex)
 Product.create!(echo_glow)
 Product.create!(smart_plug)
+
+file = open()
