@@ -7,6 +7,7 @@ import SignupFormContainer from "./signup/signup_form_container";
 import LoginFormContainer from "./signup/login_form_container";
 import SplashContainer from "./splash/splash_container";
 import ProductsIndexContainer from "./products/products_index_container";
+import ProductsShowContainer from "./products/products_show_container";
 
 const App = () => {
     const location = useLocation().pathname;
@@ -20,6 +21,7 @@ const App = () => {
         <Switch>
             <AuthRoute path="/login" component={LoginFormContainer}/>
             <AuthRoute path="/signup" component={SignupFormContainer}/>
+            <Route path="/products/:productId" component={ProductsShowContainer}/>
             <Route path="/products" component={ProductsIndexContainer}/>
             <Route path='/' component={SplashContainer}/>
         </Switch>
