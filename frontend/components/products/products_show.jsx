@@ -12,6 +12,7 @@ class ProductsShow extends React.Component {
             <div>
                 {this.props.product.title}
                 <br />
+                <img src={this.props.product.imageURL} alt="" />
                 <Link to="/products/">Index</Link>
             </div>
         )
