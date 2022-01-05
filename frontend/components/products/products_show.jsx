@@ -33,14 +33,16 @@ class ProductsShow extends React.Component {
                         <button className="purchase-btn">Buy Now</button>
                         <p><span className="blue">Secure transactions</span></p>
                         <table>
-                            <tr>
-                                <td>Ships from</td>
-                                <td>Omozan.com</td>
-                            </tr>
-                            <tr>
-                                <td>Sold by</td>
-                                <td>Omozan.com</td>
-                            </tr>
+                            <tbody>
+                                <tr>
+                                    <td>Ships from</td>
+                                    <td>Omozan.com</td>
+                                </tr>
+                                <tr>
+                                    <td>Sold by</td>
+                                    <td>Omozan.com</td>
+                                </tr>
+                            </tbody>
                         </table>
                         <p>Return policy: <span className="blue">Eligable for Return, Refund or Replacement</span></p>
                     </aside>
