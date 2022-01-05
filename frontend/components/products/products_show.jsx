@@ -8,12 +8,43 @@ class ProductsShow extends React.Component {
 
     render(){
         if (!this.props.product) return null;
+        const {product} = this.props;
         return(
-            <div>
-                {this.props.product.title}
-                <br />
-                <img src={this.props.product.imageURL} alt="" />
-                <Link to="/products/">Index</Link>
+            <div className="show-page">
+                <div className="show-details">
+                    <figure className="show-image"> 
+                        <img src={product.imageURL} />
+                    </figure>
+                    <section className="show-description">
+                        <h1>{product.title}</h1>
+                        <br />
+                        <h3>${product.price.toFixed(2)}</h3>
+                        <br />
+                        {product.description}
+                    </section>
+                    <aside className="show-purchase">
+                        <h3>${product.price.toFixed(2)}</h3>
+                        <p>
+                            & <span className="blue">free returns</span>
+                        </p>
+                        <p>FREE delivery January 23 - August 5</p>
+                        <button className="add-btn">Add to Cart</button>
+                        <br />
+                        <button className="purchase-btn">Buy Now</button>
+                        <p><span className="blue">Secure transactions</span></p>
+                        <table>
+                            <tr>
+                                <td>Ships from</td>
+                                <td>Omozan.com</td>
+                            </tr>
+                            <tr>
+                                <td>Sold by</td>
+                                <td>Omozan.com</td>
+                            </tr>
+                        </table>
+                        <p>Return policy: <span className="blue">Eligable for Return, Refund or Replacement</span></p>
+                    </aside>
+                </div>
             </div>
         )
     }

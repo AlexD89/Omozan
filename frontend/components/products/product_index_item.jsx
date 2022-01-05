@@ -10,9 +10,10 @@ class ProductsIndexItem extends React.Component {
                     <div className="index-img-box">
                         <img src={product.imageURL} />
                     </div>
-                    {product.title}
                     <br />
-                    <span>$</span>{product.price.toFixed(2)}
+                    <h3>${product.price.toFixed(2)}</h3>
+                    <br />
+                    {product.title}
                 </div>
             </Link>
         </div>
