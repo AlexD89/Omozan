@@ -5,6 +5,7 @@ import Root from "./components/root";
 //Testing
 import { login, logout, signup } from "./actions/session_actions";
 import { requestProduct, requestAllProducts } from "./actions/products_actions"
+import { addCartItem, deleteCartItem, requestCartItems, updateCartItem } from "./actions/cart_items_actions";
 //testing
 
 document.addEventListener("DOMContentLoaded",()=>{
@@ -30,6 +31,10 @@ document.addEventListener("DOMContentLoaded",()=>{
     window.login = login;
     window.logout = logout;
 
+    window.requestCartItems = requestCartItems;
+    window.addCartItem = addCartItem;
+    window.updateCartItem = updateCartItem;
+    window.deleteCartItem = deleteCartItem;
 
     window.requestAllProducts = requestAllProducts;
     window.requestProduct = requestProduct;
