@@ -1,0 +1,18 @@
+.cart-page {
+    display: flex;
+    padding: 20px;
+}
+
+.cart-index {
+    width: 75%;
+    border: 2px solid red;
+    height: 1000px;
+    margin-right: 25px;
+}
+
+.checkout-box {
+    width: 20%;
+    border: 2px solid blue;
+    height: 1000px;
+}
+

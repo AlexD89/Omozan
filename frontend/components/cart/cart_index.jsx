@@ -1,12 +1,16 @@
 import React from "react";
+import CartIndexItem from "./cart_index_item";
 
 
 class CartIndex extends React.Component {
 
     render(){
         return(
-            <div>
-                This Is Cart!
+            <div className="cart-page">
+                <section className="cart-index">
+                    <CartIndexItem />
+                </section>
+                <aside className="checkout-box"></aside>
             </div>
         )
     }
