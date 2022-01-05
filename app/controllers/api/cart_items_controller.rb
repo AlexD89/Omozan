@@ -1,7 +1,7 @@
 class Api::CartItemsController < ApplicationController
 
     def index
-        @cart_items  = current_user.products
+        @cart_items  = current_user.cart_items.all
         if @cart_items
             render :index
         else
@@ -20,7 +20,7 @@ class Api::CartItemsController < ApplicationController
 
     def update
         @cart_item = Cart.find_by(id: params[:id])
-        if @cart_item.update
+        if @cart_item.update(cart_params)
             render :show
         else
             render json: @cart_item.errors.full_messages, status: 422
@@ -30,7 +30,7 @@ class Api::CartItemsController < ApplicationController
     def destroy
         @cart_item = Cart.find_by(id: params[:id])
         if @cart_item.destroy
-            render :image
+            render :show
         else
             render json: @cart_item.errors.full_messages, status: 422
         end
@@ -38,7 +38,7 @@ class Api::CartItemsController < ApplicationController
 
     private
     def cart_params
-        params.require(:cart).permit(:buyer_id, :product_id, :product_qty)
+        params.require(:cartItem).permit(:buyer_id, :product_id, :product_qty)
     end
 
 end
