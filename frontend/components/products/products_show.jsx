@@ -45,6 +45,12 @@ class ProductsShow extends React.Component {
                         <p>Return policy: <span className="blue">Eligable for Return, Refund or Replacement</span></p>
                     </aside>
                 </div>
+                <div className="show-reviews">
+                    <div className="divider show"></div>
+                    <h1>
+                        Product Reviews
+                    </h1>
+                </div>
             </div>
         )
     }

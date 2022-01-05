@@ -1,3 +1,5 @@
+@import "./reviews.css";
+
 .show-page {
     background-color: white;
     display: flex;
