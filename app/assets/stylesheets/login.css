@@ -34,7 +34,6 @@
 
 .form-box input[type="text"], .form-box input[type="password"] {
     border: 1px solid #a6a6a6;
-    border-color: #949494;
     padding-left: 10px;
     border-radius: 4px;
     height: 30px;
