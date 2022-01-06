@@ -1,21 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 class ProductsShow extends React.Component {
-    constructor(props){
-        super(props);
-    }
-
+    
     componentDidMount(){
         this.props.requestProduct(this.props.match.params.productId)
     }
 
     handleAddProduct = (e) => {
         e.preventDefault();
-        const temp = {buyer_id: this.props.currentUserId, 
-                        product_id: this.props.product.id, 
-                        product_qty: 1};
-        this.props.addToCart(temp);
+        if (this.props.currentUserId) {
+            const temp = {buyer_id: this.props.currentUserId, 
+                            product_id: this.props.product.id, 
+                            product_qty: 1};
+            this.props.addToCart(temp);
+        } else {
+            this.props.history.push("/login")
+        }
         
     }
 

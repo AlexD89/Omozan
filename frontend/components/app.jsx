@@ -12,9 +12,7 @@ import cartIndexContainer from "./cart/cart_index_container";
 
 const App = () => {
     const location = useLocation().pathname;
-
     return <div>
-
         <header>
             {location === "/login" || location === "/signup" ? "" : <NavbarContainer />}
         </header>

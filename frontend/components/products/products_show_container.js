@@ -5,7 +5,7 @@ import { addCartItem } from "../../actions/cart_items_actions";
 
 const mapStateToProps = (state, ownProps) => ({
     product: state.entities.products[ownProps.match.params.productId],
-    currentUserId: state.session.currentUserId
+    currentUserId: state.session.currentUserId,
 })
 
 const mapDispatchToProps = (dispatch) => ({
