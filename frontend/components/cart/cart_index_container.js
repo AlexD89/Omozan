@@ -5,7 +5,7 @@ import CartIndex from "./cart_index"
 
 const mapStateToProps = state => ({
     cartItems: Object.values(state.entities.cartItems),
-    products: Object.values(state.entities.products)
+    products: state.entities.products
 })
 
 const mapDispatchToProps = dispatch => ({

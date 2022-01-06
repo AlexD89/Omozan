@@ -9,8 +9,8 @@ class CartIndex extends React.Component {
     }
 
     render(){
-        if (!this.props.cartItems || this.props.products.length < 2) return null;
         const { products, cartItems, deleteCartItem} = this.props;
+        if (!this.props.cartItems || Object.values(products).length < 2) return null;
         return(
             <div className="cart-page">
                 <section className="cart-index">
