@@ -14,10 +14,20 @@ class ProductsShow extends React.Component {
     handleAddProduct = (e) => {
         e.preventDefault();
         if (this.props.currentUserId) {
-            const temp = {buyer_id: this.props.currentUserId, 
+            const newCartItem = {buyer_id: this.props.currentUserId, 
                             product_id: this.props.product.id, 
                             product_qty: this.state.product_qty};
-            this.props.addToCart(temp);
+            if (this.props.cart.some(ci => ci.product_id === this.props.product.id)){
+                this.props.cart.forEach(ci => {
+                    if (ci.product_id === this.props.product.id) {
+                        const newCartItem = ci;
+                        newCartItem["product_qty"] += this.state.product_qty;
+                        this.props.updateCartItem(newCartItem)
+                    }
+                })
+            } else {
+                this.props.addToCart(newCartItem);
+            }
         } else {
             this.props.history.push("/login")
         }
@@ -27,7 +37,7 @@ class ProductsShow extends React.Component {
     render(){
         if (!this.props.product) return null;
         const {product} = this.props;
-        console.log(this.state);
+        console.log(this.props.cart);
         return(
             <div className="show-page">
                 <div className="show-details">

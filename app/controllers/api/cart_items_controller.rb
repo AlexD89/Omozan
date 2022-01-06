@@ -21,7 +21,7 @@ class Api::CartItemsController < ApplicationController
     end
 
     def update
-        @cart_item = Cart.find_by(id: params[:id])
+        @cart_item = Cart.find_by(product_id: params[:cartItem][:product_id])
         if @cart_item.update(cart_params)
             render :show
         else

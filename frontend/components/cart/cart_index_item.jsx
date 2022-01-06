@@ -9,7 +9,12 @@ const CartIndexItem = (props) => {
             </div>
             <div className="cart-item-details">
                 <h2>{product.title}</h2>
-            <button onClick={e=>deleteCartItem(cartItem.id)}>Delete</button>
+                <br />
+                <br />
+                {cartItem.product_qty}
+                <br />
+                <br />
+                <button onClick={e=>deleteCartItem(cartItem.id)}>Delete</button>
             </div>
             <div className="cart-item-price">
                 <span>${product.price.toFixed(2)}</span>
