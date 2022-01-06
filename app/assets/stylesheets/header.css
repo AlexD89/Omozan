@@ -14,6 +14,23 @@ header {
     padding: 10px;
 }
 
+
+.large-badge {
+    position: absolute;
+    right: 72px;
+    top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.small-badge {
+    position: absolute;
+    right: 69px;
+    top: 10px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
 .nav-bar {
     padding: 5px 20px;
     display: flex;

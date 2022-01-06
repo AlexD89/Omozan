@@ -74,6 +74,10 @@ span.blue {
     cursor: pointer;
 }
 
+.add-btn:active {
+    background-color: #fcdc50;
+}
+
 .purchase-btn {
     border: 1px solid #ffa61f;
     background-color: #ffa61f;

@@ -4,7 +4,8 @@ import {
     REMOVE_CART_ITEM 
 } from "../actions/cart_items_actions";
 import {
-    LOGOUT_CURRENT_USER
+    LOGOUT_CURRENT_USER,
+    RECEIVE_CURRENT_USER
 } from "../actions/session_actions"
 
 const cartItemsReducer = (state = {}, action) => {

@@ -1,4 +1,5 @@
 import { connect } from "react-redux"
+import { requestCartItems } from "../../actions/cart_items_actions"
 import { clearErrors, signup } from "../../actions/session_actions"
 import SessionForm from "./session_form"
 

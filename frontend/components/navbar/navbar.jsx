@@ -5,6 +5,12 @@ import SerchBarContainer from "../searchbar/serchbar_container";
 
 class Navbar extends React.Component {
 
+    componentDidMount(){
+        if( this.props.currentUser ){
+            this.props.requestCartItems()
+        }
+    }
+
     display = () => {
         const { currentUser, logout } = this.props
         if (currentUser){
@@ -49,6 +55,9 @@ class Navbar extends React.Component {
                     </Link>
                     <Link to="/cart">
                         <div className="cart-button">
+                            <div className={this.props.count.length > 9 ? "small-badge" : "large-badge"}>
+                                {this.props.count.length}
+                            </div>
                             <img src={window.cartURL} alt="cart" className="cart-image"/>
                             Cart
                         </div>
