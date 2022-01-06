@@ -2,8 +2,21 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 class ProductsShow extends React.Component {
+    constructor(props){
+        super(props);
+    }
+
     componentDidMount(){
         this.props.requestProduct(this.props.match.params.productId)
+    }
+
+    handleAddProduct = (e) => {
+        e.preventDefault();
+        const temp = {buyer_id: this.props.currentUserId, 
+                        product_id: this.props.product.id, 
+                        product_qty: 1};
+        this.props.addToCart(temp);
+        
     }
 
     render(){
@@ -28,7 +41,11 @@ class ProductsShow extends React.Component {
                             & <span className="blue">free returns</span>
                         </p>
                         <p>FREE delivery January 23 - August 5</p>
-                        <button className="add-btn">Add to Cart</button>
+                        <button 
+                            className="add-btn"
+                            onClick={this.handleAddProduct}>
+                            Add to Cart
+                        </button>
                         <br />
                         <button className="purchase-btn">Buy Now</button>
                         <p><span className="blue">Secure transactions</span></p>

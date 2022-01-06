@@ -3,7 +3,7 @@ import { clearErrors, signup } from "../../actions/session_actions"
 import SessionForm from "./session_form"
 
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = state => ({
     errors: state.errors.session,
     formType: "Signup"
 })

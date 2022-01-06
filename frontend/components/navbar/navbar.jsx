@@ -47,10 +47,12 @@ class Navbar extends React.Component {
                             {this.display()}
                         </div>
                     </Link>
-                    <div className="cart-button">
-                        <img src={window.cartURL} alt="cart" className="cart-image"/>
-                        Cart
-                    </div>
+                    <Link to="/cart">
+                        <div className="cart-button">
+                            <img src={window.cartURL} alt="cart" className="cart-image"/>
+                            Cart
+                        </div>
+                    </Link>
                 </div>
                 <div className="categories">
                     <ul>
