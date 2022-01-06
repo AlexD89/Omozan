@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+
+@import "./css_reset.css";
+@import "./static_pages.scss";
+@import "./login.css";
+@import "./header.css";
+@import "./splash.css";
+@import "./footer.css";
+@import "./products.css";
+@import "./show/show.css";
+@import "./cart.scss";
