@@ -12,6 +12,16 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => (
     />
 );
 
+const Cart = ({ component: Component, path, loggedIn, exact }) => (
+    <Route 
+        path={path}
+        exact={exact}
+        render={props => 
+            loggedIn ? <Component {...props} /> : <Redirect to="/login" />
+        }
+    />
+);
+
 const mapStateToProps = state => {
     return { loggedIn: Boolean(state.session.currentUserId) };
 };
@@ -22,3 +32,10 @@ export const AuthRoute = withRouter(
         null
     )(Auth)
 );
+
+export const ProtectedRoute = withRouter(
+    connect(
+        mapStateToProps,
+        null
+    )(Cart)
+)

@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, useLocation, Switch } from "react-router";
-import { AuthRoute } from "../util/route_util";
+import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import NavbarContainer from "./navbar/navbar_container";
 import Footer from "./footer/footer";
 import SignupFormContainer from "./signup/signup_form_container";
@@ -24,7 +24,7 @@ const App = () => {
             <AuthRoute path="/signup" component={SignupFormContainer}/>
             <Route path="/products/:productId" component={ProductsShowContainer}/>
             <Route path="/products" component={ProductsIndexContainer}/>
-            <Route path="/cart" component={cartIndexContainer}/>
+            <ProtectedRoute path="/cart" component={cartIndexContainer}/>
             <Route path='/' component={SplashContainer}/>
         </Switch>
 
