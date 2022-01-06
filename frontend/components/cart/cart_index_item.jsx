@@ -3,14 +3,18 @@ import React from "react";
 const CartIndexItem = (props) => {
     const { product, cartItem, deleteCartItem } = props;
     return(
-        <li>
-            {/* <h1>Hello</h1> */}
-            <h1>item {product.title}</h1>
-            <p>buyer id: {cartItem.buyer_id}</p>
-            <p>product id: {cartItem.product_id}</p>
-            <p>quantity: {cartItem.product_qty}</p>
+        <div className="cart-item">
+            <div className="cart-img-box">
+                <img src={product.imageURL} />
+            </div>
+            <div className="cart-item-details">
+                <h2>{product.title}</h2>
             <button onClick={e=>deleteCartItem(cartItem.id)}>Delete</button>
-        </li>
+            </div>
+            <div className="cart-item-price">
+                <span>${product.price.toFixed(2)}</span>
+            </div>
+        </div>
     )
 } 
 

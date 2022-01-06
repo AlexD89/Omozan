@@ -1,6 +1,7 @@
 .cart-page {
     display: flex;
     padding: 20px;
+    font-family: sans-serif;
 }
 
 .cart-index {
@@ -8,6 +9,7 @@
     height: 1000px;
     margin-right: 25px;
     background-color: white;
+    padding: 20px;
 }
 
 .checkout-box {
@@ -16,3 +18,38 @@
     background-color: white;
 }
 
+.cart-item {
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-img-box {
+    width: 25%;
+    position: relative;
+    img {
+        max-height: 100%;
+        max-width: 100%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%); 
+    }
+}
+
+.cart-item-details {
+    width: 50%;
+}
+
+.cart-item-price {
+    width: 20%;
+    display: flex;
+    justify-content: end;
+    span{
+        font-weight: bold;
+        font-size: 18px;
+    }
+    
+}
