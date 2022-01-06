@@ -1,5 +1,7 @@
 class Api::CartItemsController < ApplicationController
 
+    before_action :ensure_logged_in, only: [:index]
+
     def index
         @cart_items  = current_user.cart_items.all
         if @cart_items
