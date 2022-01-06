@@ -1,6 +1,11 @@
 import React from "react";
 
 class ProductsShow extends React.Component {
+
+    constructor(props){
+        super(props);
+        this.state = ({product_qty: 1})
+    }
     
     componentDidMount(){
         this.props.requestProduct(this.props.match.params.productId)
@@ -11,7 +16,7 @@ class ProductsShow extends React.Component {
         if (this.props.currentUserId) {
             const temp = {buyer_id: this.props.currentUserId, 
                             product_id: this.props.product.id, 
-                            product_qty: 1};
+                            product_qty: this.state.product_qty};
             this.props.addToCart(temp);
         } else {
             this.props.history.push("/login")
@@ -22,6 +27,7 @@ class ProductsShow extends React.Component {
     render(){
         if (!this.props.product) return null;
         const {product} = this.props;
+        console.log(this.state);
         return(
             <div className="show-page">
                 <div className="show-details">
@@ -38,9 +44,17 @@ class ProductsShow extends React.Component {
                     <aside className="show-purchase">
                         <h3>${product.price.toFixed(2)}</h3>
                         <p>
-                            & <span className="blue">free returns</span>
+                            {"&"} <span className="blue">free returns</span>
                         </p>
                         <p>FREE delivery January 23 - August 5</p>
+                        <select 
+                            defaultValue={1}
+                            className="show-qty" 
+                            onChange={e => this.setState({ product_qty: parseInt(e.currentTarget.value)})}>
+                            <option value={1}>Qty:  1</option>
+                            <option value={2}>Qty:  2</option>
+                            <option value={3}>Qty:  3</option>
+                        </select>
                         <button 
                             className="add-btn"
                             onClick={this.handleAddProduct}>
