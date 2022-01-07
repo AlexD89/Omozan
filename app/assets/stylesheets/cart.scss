@@ -3,7 +3,7 @@
     align-items: flex-start;
     padding: 20px;
     font-family: sans-serif;
-    min-height: calc(100vh - 300px);
+    min-height: calc(100vh - 280px);
 }
 
 .cart-index {
@@ -17,6 +17,23 @@
     width: 20%;
     background-color: white;
     height: 300px;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.checkout-box button {
+        border: 1px solid #fcdc50;
+        border-radius: 6px;
+        width: 85%;
+        height: 27px;
+        background-color: #fcdc50;
+        &:hover {
+            background-color: #e6c535;
+            cursor: pointer;
+        }
+        &:active {
+            background-color: #fcdc50;
+        }
 }
 
 .cart-item {
@@ -46,13 +63,24 @@
         font-size: 18px;
     }
     span {
-        color: green
+        color: green;
+        font-size: 14px;
     }
-
+    select {
+        background-color: whitesmoke;
+        border: 1px solid #ddd;
+        border-radius: 7px;
+        padding: 5px;
+        margin-right: 10px;
+        font-size: 15px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }
 
 span.delete-link {
-    color: blue;
+    color: #007eb9;
     &:hover {
         cursor: pointer;
     }

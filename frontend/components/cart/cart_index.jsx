@@ -51,7 +51,20 @@ class CartIndex extends React.Component {
                         </h3>
                     </div>
                 </section>
-                <aside className="checkout-box"></aside>
+                <aside className="checkout-box">
+                    <h3>
+                        Subtotal ({this.itemsCounter(cartItems)} items):
+                        <span>${this.totalCounter(cartItems)}</span>
+                    </h3>
+                    <label>    
+                        <input 
+                            type="checkbox" 
+                            id="gift-checkbox"
+                            />
+                        This order contains a gift
+                    </label>
+                    <button>Proceed to checkout</button>
+                </aside>
             </div>
         )
     }

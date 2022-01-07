@@ -23,6 +23,7 @@ class CartIndexItem extends React.Component {
                     <h2>{product.title}</h2>
                     <span>In Stock</span> 
                     <br />
+                    <br />
                     <select defaultValue={cartItem.product_qty} onChange={this.handleQty}>
                         <option value={cartItem.product_qty}>Qty: {cartItem.product_qty}</option>
                         {range.map(num => {
