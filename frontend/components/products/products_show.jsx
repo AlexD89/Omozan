@@ -34,6 +34,11 @@ class ProductsShow extends React.Component {
         
     }
 
+    getDecimals = (num) => {
+        const n = num.toFixed(2);
+        return n.slice(n.length-2)
+    }
+
     render(){
         if (!this.props.product) return null;
         const {product} = this.props;
@@ -46,13 +51,33 @@ class ProductsShow extends React.Component {
                     </figure>
                     <section className="show-description">
                         <h1>{product.title}</h1>
-                        <br />
-                        <h3>${product.price.toFixed(2)}</h3>
-                        <br />
-                        {product.description}
+                        <div className="score-img-box">
+                            <img src={window.starsURL} alt="stars" />
+                        </div>
+                        <div className="divider"></div>
+                        <div className="price-box">
+                            <span className="decimals">$</span>
+                            <h3>
+                                {Math.floor(product.price)}
+                            </h3>
+                            <span className="decimals">
+                                {this.getDecimals(product.price)}
+                            </span>
+                        </div>
+                        <div className="product-desc">
+                            {product.description}
+                        </div>
                     </section>
                     <aside className="show-purchase">
-                        <h3>${product.price.toFixed(2)}</h3>
+                        <div className="price-box">
+                            <span className="decimals">$</span>
+                            <h3>
+                                {Math.floor(product.price)}
+                            </h3>
+                            <span className="decimals">
+                                {this.getDecimals(product.price)}
+                            </span>
+                        </div>
                         <p>
                             {"&"} <span className="blue">free returns</span>
                         </p>

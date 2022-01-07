@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"
 
 
 class CartIndexItem extends React.Component {
@@ -17,10 +18,14 @@ class CartIndexItem extends React.Component {
         return(
             <div className="cart-item">
                 <div className="cart-img-box">
-                    <img src={product.imageURL} />
+                    <Link to={`/products/${product.id}`}>
+                        <img src={product.imageURL} />
+                    </Link>
                 </div>
                 <div className="cart-item-details">
-                    <h2>{product.title}</h2>
+                    <Link to={`/products/${product.id}`}>
+                        <h2>{product.title}</h2>
+                    </Link>
                     <span>In Stock</span> 
                     <br />
                     <br />

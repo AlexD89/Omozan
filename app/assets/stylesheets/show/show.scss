@@ -5,6 +5,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    .divider {
+        border-top: 1xp solid #ddd;
+        width: 100%;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
 }
 
 .show-details {
@@ -19,8 +25,8 @@
 }
 
 .show-details h3 {
-    font-weight: bolder;
-    font-size: 20px;
+    font-weight: 500;
+    font-size: 30px;
 }
 
 span.blue {
@@ -42,8 +48,15 @@ span.blue {
     transform: translateX(-50%);
 }
 
+.score-img-box {
+    width: 100px;
+    margin-top: 5px;
+    img {
+        width: 100%;
+    }
+}
+
 .show-description {
-    border: 2px green transparent;
     width: 40%;
     padding: 10px;
     margin-right: 10px;
@@ -57,7 +70,7 @@ span.blue {
 }
 
 .show-purchase p {
-    margin: 10px 0;
+    margin: 3px 0 10px 0;
 }
 
 .add-btn, .purchase-btn {
@@ -98,4 +111,19 @@ span.blue {
 td {
     padding: 0 5px;
     font-size: 13px;
+}
+
+.product-desc {
+    margin-top: 25px;
+}
+
+.price-box {
+    display: flex;
+    align-items: flex-start;
+}
+
+.decimals {
+    padding-top: 2px;
+    font-size: 16px;
+    font-weight: 500;
 }
