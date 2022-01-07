@@ -74,7 +74,7 @@ class Navbar extends React.Component {
                         <Link to="/products"><li>All</li></Link>
                         <li>Computers</li>
                         <li>Electronics</li>
-                        <li>Amazon Home</li>
+                        <li>Omozan Home</li>
                         <li>Books</li>
                         <li>Movies</li>
                         <li>Pet Supplies</li>
