@@ -26,12 +26,14 @@ class CartIndex extends React.Component {
     render(){
         const { products, cartItems, deleteCartItem, updateCartItem} = this.props;
         if (!this.props.cartItems || Object.values(products).length < 2) return null;
-        console.log(this.totalCounter(cartItems));
-
         
         return(
             <div className="cart-page">
                 <section className="cart-index">
+                    <div className="cart-index-title">
+                        <h2>Shopping Cart</h2>
+                        <p>Price</p>
+                    </div>
                     <ul>
                         {cartItems.map( (cartItem, i) => (
                             <CartIndexItem 
@@ -42,6 +44,12 @@ class CartIndex extends React.Component {
                                 key={i}/>
                         ))}
                     </ul>
+                    <div className="cart-index-sub">
+                        <h3>
+                            Subtotal ({this.itemsCounter(cartItems)} items): 
+                            <span>${this.totalCounter(cartItems)}</span>
+                        </h3>
+                    </div>
                 </section>
                 <aside className="checkout-box"></aside>
             </div>

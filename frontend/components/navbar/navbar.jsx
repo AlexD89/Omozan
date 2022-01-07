@@ -11,6 +11,12 @@ class Navbar extends React.Component {
         }
     }
 
+    itemsCounter = (arr) => {
+        let total = 0;
+        arr.forEach(obj => total += parseInt(obj.product_qty))
+        return total;
+    }
+
     display = () => {
         const { currentUser, logout } = this.props
         if (currentUser){
@@ -55,8 +61,8 @@ class Navbar extends React.Component {
                     </Link>
                     <Link to="/cart">
                         <div className="cart-button">
-                            <div className={this.props.count.length > 9 ? "small-badge" : "large-badge"}>
-                                {this.props.count.length}
+                            <div className={this.itemsCounter(this.props.count) > 9 ? "small-badge" : "large-badge"}>
+                                {this.itemsCounter(this.props.count)}
                             </div>
                             <img src={window.cartURL} alt="cart" className="cart-image"/>
                             Cart

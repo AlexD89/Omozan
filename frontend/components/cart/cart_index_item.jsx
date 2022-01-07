@@ -11,7 +11,7 @@ class CartIndexItem extends React.Component {
     }
 
     render(){
-        const { product, cartItem, deleteCartItem, updateCartItem } = this.props;
+        const { product, cartItem, deleteCartItem } = this.props;
         const range = [1,2,3,4,5,6,7,8,9,10]
         
         return(
@@ -21,6 +21,7 @@ class CartIndexItem extends React.Component {
                 </div>
                 <div className="cart-item-details">
                     <h2>{product.title}</h2>
+                    <span>In Stock</span> 
                     <br />
                     <select defaultValue={cartItem.product_qty} onChange={this.handleQty}>
                         <option value={cartItem.product_qty}>Qty: {cartItem.product_qty}</option>
@@ -30,8 +31,9 @@ class CartIndexItem extends React.Component {
                                 value={num}>{num}</option>
                         })}
                     </select>
-                    <br />
-                    <button onClick={e=>deleteCartItem(cartItem.id)}>Delete</button>
+                    <span 
+                        className="delete-link" 
+                        onClick={e=>deleteCartItem(cartItem.id)}>Delete</span>
                 </div>
                 <div className="cart-item-price">
                     <span>${product.price.toFixed(2)}</span>
