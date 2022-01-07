@@ -9,10 +9,15 @@ class User < ApplicationRecord
     has_many :cart_items,
         foreign_key: :buyer_id,
         class_name: :Cart
+        
+    has_many :reviews,
+    foreign_key: :author_id,
+        class_name: :Review
 
     has_many :products,
         through: :cart_items,
         source: :product
+
 
 
     def self.find_by_credentials(email, password)
