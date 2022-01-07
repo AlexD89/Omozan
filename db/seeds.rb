@@ -12,10 +12,22 @@ User.destroy_all
 Product.destroy_all
 
 User.create!({
-            username: "Demo User",
-            email: "demo_user@gmail.com",
-            password: "demo_user_3000"
-        })
+    username: "Demo User",
+    email: "demo_user@gmail.com",
+    password: "demo_user_3000"
+})
+
+User.create!({
+    username: "Alex",
+    email: "alex@gmail.com",
+    password: "hunter12"
+})
+
+User.create!({
+    username: "Isabel",
+    email: "isabel@gmail.com",
+    password: "hunter12"
+})
 
 ipsum_desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et ante congue, cursus nisl nec, dapibus justo. Duis est tortor, bibendum sit amet aliquam eu, sodales eu neque. Sed a tortor sit amet diam gravida mattis. Vestibulum efficitur non tellus a vestibulum. Nam pellentesque tincidunt eros, sit amet pretium augue aliquam in. Ut vel mi urna. Morbi fermentum odio urna, hendrerit efficitur ante dignissim et. In dapibus augue quis tempus faucibus. Vestibulum vel leo nisl. Donec neque quam, placerat in enim eget, sodales accumsan nisl.
 
