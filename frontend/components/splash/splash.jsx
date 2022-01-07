@@ -33,7 +33,7 @@ class Splash extends React.Component {
                         <Link to="/products/1">Shop Apple Macbook</Link>
                     </div>
                     <div className="splash-tab">
-                        <h3>Atomic Habits by James CLear</h3>
+                        <h3>Atomic Habits by James Clear</h3>
                         <div className="img-box">
                             <img src={window.img4} alt="" />
                         </div>
