@@ -1,4 +1,5 @@
 import React from "react";
+import ReviewItem from "../reviews/reviews_item";
 
 class ProductsShow extends React.Component {
 
@@ -8,7 +9,8 @@ class ProductsShow extends React.Component {
     }
     
     componentDidMount(){
-        this.props.requestProduct(this.props.match.params.productId)
+        this.props.requestProduct(this.props.match.params.productId);
+        this.props.requestReviews(this.props.match.params.productId);
     }
 
     handleAddProduct = (e) => {
@@ -41,8 +43,7 @@ class ProductsShow extends React.Component {
 
     render(){
         if (!this.props.product) return null;
-        const {product} = this.props;
-        console.log(this.props.cart);
+        const { product, reviews } = this.props;
         return(
             <div className="show-page">
                 <div className="show-details">
@@ -113,11 +114,20 @@ class ProductsShow extends React.Component {
                         <p>Return policy: <span className="blue">Eligable for Return, Refund or Replacement</span></p>
                     </aside>
                 </div>
+                <div className="divider show"></div>
                 <div className="show-reviews">
-                    <div className="divider show"></div>
-                    <h1>
-                        Product Reviews
-                    </h1>
+                    <aside>
+
+                    </aside>
+                    <section>
+                        <ul>
+                            {Object.values(reviews).map( review => (
+                                <ReviewItem 
+                                    review={review}
+                                    key={review.id}/>
+                            ))}
+                        </ul>
+                    </section>
                 </div>
             </div>
         )

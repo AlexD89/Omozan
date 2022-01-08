@@ -1,0 +1,35 @@
+.show-reviews {
+    font-family: sans-serif;
+    width: 80%;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    aside, section {
+        padding: 5px;
+        border: 1px solid #000000
+    }
+    aside {
+        width: 30%
+    }
+    section {
+        width: 65%
+    }
+}
+
+.avatar-img-box {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    img {
+        max-height: 100%;
+    }
+}
+
+.review-title {
+    height: 20px;
+    display: flex;
+    align-items: flex-end;
+    img {
+        max-height: 100%;
+    }
+}
