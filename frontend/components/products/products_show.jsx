@@ -1,5 +1,6 @@
 import React from "react";
 import ReviewItem from "../reviews/reviews_item";
+import { Link } from "react-router-dom";
 
 class ProductsShow extends React.Component {
 
@@ -117,7 +118,12 @@ class ProductsShow extends React.Component {
                 <div className="divider show"></div>
                 <div className="show-reviews">
                     <aside>
-
+                        <h1>Customer Reviews</h1>
+                        <h3>Review this product</h3>
+                        <p>Share your thoughts with other customers</p>
+                        <Link to={`/reviews/create-review/${product.id}`} > 
+                            <button>Write a customer review</button>
+                        </Link>
                     </aside>
                     <section>
                         <ul>

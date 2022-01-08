@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import { Route, useLocation, Switch } from "react-router";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import NavbarContainer from "./navbar/navbar_container";
@@ -8,9 +8,10 @@ import LoginFormContainer from "./signup/login_form_container";
 import SplashContainer from "./splash/splash_container";
 import ProductsIndexContainer from "./products/products_index_container";
 import ProductsShowContainer from "./products/products_show_container";
-import cartIndexContainer from "./cart/cart_index_container";
+import CartIndexContainer from "./cart/cart_index_container";
+import CreateReviewContainer from "./reviews/create_review_container";
 
-const App = () => {
+const App = (props) => {
     const location = useLocation().pathname;
     return <div>
         <header>
@@ -22,7 +23,8 @@ const App = () => {
             <AuthRoute path="/signup" component={SignupFormContainer}/>
             <Route path="/products/:productId" component={ProductsShowContainer}/>
             <Route path="/products" component={ProductsIndexContainer}/>
-            <ProtectedRoute path="/cart" component={cartIndexContainer}/>
+            <ProtectedRoute path="/cart" component={CartIndexContainer}/>
+            <ProtectedRoute path="/reviews/create-review/:productId" component={CreateReviewContainer}/>
             <Route path='/' component={SplashContainer}/>
         </Switch>
 
