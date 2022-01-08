@@ -1,4 +1,14 @@
 class Api::ReviewsController < ApplicationController
+    def index 
+        @product = Product.find_by(id: params[:product_id])
+        @reviews = @product.reviews
+        if @reviews
+            render :index
+        else
+            render json: ["No reviews found"], status: 404
+        end
+    end
+    
     def create
         @review = Review.new(review_params)
         if @review.save
@@ -28,6 +38,6 @@ class Api::ReviewsController < ApplicationController
 
     private
     def review_params
-        params(:review).permit(:title, :body, :score, :author_id, :product_id)
+        params.require(:review).permit(:title, :body, :score, :author_id, :product_id)
     end
 end
