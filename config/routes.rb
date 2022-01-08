@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       resources :reviews, only: [:index]
     end
     resources :cart_items, only: [:index, :create, :update, :destroy]
-    resources :reviews, only: [:create, :update, :destroy]
+    resources :reviews, only: [:index, :create, :update, :destroy]
   end
 
   root "static_pages#root"

@@ -4,10 +4,11 @@ export const RECEIVE_ALL_REVIEWS = 'RECEIVE_ALL_REVIEWS'
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW'
 export const REMOVE_REVIEW = 'REMOVE_REVIEW'
 
-const receiveAllReviews = ( reviews ) => ({
+const receiveAllReviews = ( reviews ) => {
+    return{
     type: RECEIVE_ALL_REVIEWS,
     reviews
-})
+}}
 
 const receiveReview = review => ({
     type: RECEIVE_REVIEW,
@@ -19,22 +20,22 @@ const removeReview = reviewId => ({
     reviewId
 })
 
-export const requestReviews = () => dispatch => (
-    ReviewsApiUtils.fetchAllReviews()
+export const requestReviews = (productId) => dispatch => (
+    ReviewsApiUtils.fetchAllReviews(productId)
         .then(reviews => dispatch(receiveAllReviews(reviews)))
 )
 
-export const createReview = ( review ) => dispatch => (
+export const createReview = ( review ) => dispatch => {
     ReviewsApiUtils.createReview(review)
         .then(review => dispatch(receiveReview(review)))
-)
+}
 
-export default updateReview = ( review ) => dispatch => (
+export const updateReview = ( review ) => dispatch => (
     ReviewsApiUtils.updateReview(review)
         .then(review => dispatch(receiveReview(review)))
 )
 
-export default deleteReview = ( reviewId ) => dispatch => (
+export const deleteReview = ( reviewId ) => dispatch => (
     ReviewsApiUtils.deleteReview(reviewId)
         .then(() => dispatch(removeReview(reviewId)))
 )

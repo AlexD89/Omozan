@@ -7,7 +7,6 @@ import {
 const reviewsReducer = (state = {}, action) => {
     Object.freeze(state);
     const nextState = Object.assign({}, state);
-
     switch (action.type) {
         case RECEIVE_ALL_REVIEWS:
             return action.reviews;

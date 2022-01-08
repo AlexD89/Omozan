@@ -6,6 +6,7 @@ import Root from "./components/root";
 import { login, logout, signup } from "./actions/session_actions";
 import { requestProduct, requestAllProducts } from "./actions/products_actions"
 import { addCartItem, deleteCartItem, requestCartItems, updateCartItem } from "./actions/cart_items_actions";
+import { requestReviews, createReview, updateReview, deleteReview } from "./actions/reviews_actions"
 //testing
 
 document.addEventListener("DOMContentLoaded",()=>{
@@ -38,6 +39,11 @@ document.addEventListener("DOMContentLoaded",()=>{
 
     window.requestAllProducts = requestAllProducts;
     window.requestProduct = requestProduct;
+
+    window.requestReviews = requestReviews;
+    window.createReview = createReview;
+    window.updateReview = updateReview;
+    window.deleteReview = deleteReview;
     //Testing Area
 
     ReactDOM.render(<Root store={store} />, document.getElementById("root"));
