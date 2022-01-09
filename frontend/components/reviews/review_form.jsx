@@ -9,8 +9,8 @@ class ReviewForm extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.formAction(this.state);
-        this.props.history.push(`/products/${this.props.product.id}`)
+        this.props.formAction(this.state)
+            .then(() => this.props.history.push(`/products/${this.props.product.id}`))
     }
 
     handleRadio = (e) => {
@@ -32,28 +32,34 @@ class ReviewForm extends React.Component {
                         </div>
                         {product.title}
                     </div>
-                    <div className="review-box-rating">
-                        <h2>Overall rating</h2>
-                        {scoreValues.map(score => (
+                    <form onSubmit={this.handleSubmit}>
+                        <label><h2>Overall rating</h2>
+                            {scoreValues.map(score => (
+                                <input 
+                                    key={score}
+                                    type="radio" 
+                                    name="score" 
+                                    value={score}
+                                    onClick={this.handleRadio} 
+                                    defaultChecked={this.state.score == score}/>
+                            ))}
+                        </label>
+                        <label><h2>Add a headline</h2>
                             <input 
-                                key={score}
-                                type="radio" 
-                                name="score" 
-                                value={score}
-                                onClick={this.handleRadio} 
-                                defaultChecked={this.state.score == score}/>
-                        ))}
-                    </div>
-                    <h2>Add a headline</h2>
-                    <input 
-                        type="text"
-                        value={this.state.title}
-                        onChange={e=>this.setState({title: e.currentTarget.value})}/>
-                    <h2>Add a written review</h2>
-                    <textarea 
-                        value={this.state.body}
-                        onChange={e=>this.setState({body: e.currentTarget.value})}/>
-                    <button onClick={this.handleSubmit}>Submit</button>
+                                type="text"
+                                value={this.state.title}
+                                onChange={e=>this.setState({title: e.currentTarget.value})}
+                                placeholder="Whats most important to know?"/>
+                        </label>
+                        <label><h2>Add a written review</h2>
+                            <textarea 
+                                value={this.state.body}
+                                onChange={e=>this.setState({body: e.currentTarget.value})}
+                                placeholder="What did you like or dislike?
+                                                What did you use this product for?"/>
+                        </label>
+                        <input type="submit" value="Submit" />
+                    </form>
                 </div>
             </div>
         )
