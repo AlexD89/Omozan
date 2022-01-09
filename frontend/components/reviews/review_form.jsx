@@ -6,9 +6,9 @@ class ReviewForm extends React.Component {
         this.state = this.props.review;
     }
 
-    componentDidMount(){
-        this.props.requestProduct(this.props.match.params.productId)
-    }
+    // componentDidMount(){
+    //     this.props.requestProduct(this.props.match.params.productId)
+    // }
 
     handleSubmit = (e) => {
         e.preventDefault();
@@ -23,7 +23,7 @@ class ReviewForm extends React.Component {
     render(){
 
         const { product } = this.props;
-        if (!product) return null;
+        if (!product ) return null;
         return(
             <div className="review-page">
                 <div className="review-box">
