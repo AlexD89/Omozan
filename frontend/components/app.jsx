@@ -10,8 +10,9 @@ import ProductsIndexContainer from "./products/products_index_container";
 import ProductsShowContainer from "./products/products_show_container";
 import CartIndexContainer from "./cart/cart_index_container";
 import CreateReviewContainer from "./reviews/create_review_container";
+import EditReviewContainer from "./reviews/edit_review_container";
 
-const App = (props) => {
+const App = () => {
     const location = useLocation().pathname;
     return <div>
         <header>
@@ -25,6 +26,7 @@ const App = (props) => {
             <Route path="/products" component={ProductsIndexContainer}/>
             <ProtectedRoute path="/cart" component={CartIndexContainer}/>
             <ProtectedRoute path="/reviews/create-review/:productId" component={CreateReviewContainer}/>
+            <ProtectedRoute path="/reviews/edit-review/:productId" component={EditReviewContainer}/>
             <Route path='/' component={SplashContainer}/>
         </Switch>
 
