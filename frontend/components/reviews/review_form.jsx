@@ -10,11 +10,20 @@ class ReviewForm extends React.Component {
         this.props.requestProduct(this.props.match.params.productId)
     }
 
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.props.formAction(this.state);
+        this.props.history.push(`/products/${this.props.product.id}`)
+    }
+
+    handleRadio = (e) => {
+        this.setState({ score: e.currentTarget.value })
+    }
+
     render(){
 
         const { product } = this.props;
         if (!product) return null;
-        console.log(this.props.review);
         return(
             <div className="review-page">
                 <div className="review-box">
@@ -27,11 +36,11 @@ class ReviewForm extends React.Component {
                     </div>
                     <div className="review-box-rating">
                         <h2>Overall rating</h2>
-                        <input type="radio" name="review-score" value={1}/>
-                        <input type="radio" name="review-score" value={2}/>
-                        <input type="radio" name="review-score" value={3}/>
-                        <input type="radio" name="review-score" value={4}/>
-                        <input type="radio" name="review-score" value={5}/>
+                        <input type="radio" name="score" value={1} onClick={this.handleRadio}/>
+                        <input type="radio" name="score" value={2} onClick={this.handleRadio}/>
+                        <input type="radio" name="score" value={3} onClick={this.handleRadio}/>
+                        <input type="radio" name="score" value={4} onClick={this.handleRadio}/>
+                        <input type="radio" name="score" value={5} onClick={this.handleRadio}/>
                     </div>
                     <h2>Add a headline</h2>
                     <input 
@@ -42,7 +51,7 @@ class ReviewForm extends React.Component {
                     <textarea 
                         value={this.state.body}
                         onChange={e=>this.setState({body: e.currentTarget.value})}/>
-                    <button onClick={e=>this.props.formAction(this.state)}>Submit</button>
+                    <button onClick={this.handleSubmit}>Submit</button>
                 </div>
             </div>
         )
