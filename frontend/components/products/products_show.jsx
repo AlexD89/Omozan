@@ -142,6 +142,7 @@ class ProductsShow extends React.Component {
                     <aside>
                         <h1>Customer Reviews</h1>
                         <div className={`score-box ${this.avgScore(product.avgScore)}`}></div>
+                        <div className="divider"></div>
                         <h3>Review this product</h3>
                         <p>Share your thoughts with other customers</p>
                         <Link to={
@@ -151,6 +152,7 @@ class ProductsShow extends React.Component {
                             } > 
                             <button>Write a customer review</button>
                         </Link>
+                        {/* <div className="divider"></div> */}
                     </aside>
                     <section>
                         <ul>
