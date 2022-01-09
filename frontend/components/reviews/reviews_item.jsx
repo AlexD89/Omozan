@@ -12,11 +12,10 @@ const ReviewItem = (props) => {
             </div>
             <div className="review-title">
                 <div className={`temp num-${review.score}`}></div>    
-                {review.title}
+                <h3>{review.title}</h3>
             </div>
-            <p>Verified Purcahse</p>
-            {review.body}
-            <br />
+            <h4>Verified Purcahse</h4>
+            <p>{review.body}</p>
             <button>Helpful</button> | Report abuse
         </div>
     )

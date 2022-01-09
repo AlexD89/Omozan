@@ -141,7 +141,10 @@ class ProductsShow extends React.Component {
                 <div className="show-reviews">
                     <aside>
                         <h1>Customer Reviews</h1>
-                        <div className={`score-box ${this.avgScore(product.avgScore)}`}></div>
+                        <div className="aside-score">
+                            <div className={`score-box ${this.avgScore(product.avgScore)}`}></div>
+                            <h2>{product.avgScore.toFixed(1)} out of 5</h2>
+                        </div>
                         <div className="divider"></div>
                         <h3>Review this product</h3>
                         <p>Share your thoughts with other customers</p>

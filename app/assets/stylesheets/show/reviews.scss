@@ -3,17 +3,26 @@
     width: 80%;
     margin-bottom: 30px;
     display: flex;
-    justify-content: space-between;
-    section {
+    justify-content: space-around;
+    section, aside {
         padding: 5px;
-        border: 1px solid #000000
+        // border: 1px solid #000000
     }
     aside {
-        width: 30%
+        width: 25%
     }
     section {
-        width: 65%
+        width: 56%
     }
+}
+
+.aside-score {
+    display: flex;
+    align-items: flex-end;
+    h2 {
+        margin-left: 10px;
+        font-size: 17px;
+    }    
 }
 
 .avatar-img-box {
@@ -25,12 +34,41 @@
     }
 }
 
+.single-review {
+    margin-bottom: 25px;
+    h4 {
+        margin: 5px 0 10px 0;
+        color: rgb(204, 98, 57);
+        font-size: 13px;
+        font-weight: 600;
+    }
+    p {
+        margin-bottom: 5px;
+    }
+}
+
+.single-review button {
+    width: 90px;
+    height: 30px;
+    border: 1px solid #DDD;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0px 2px 5px 3px whitesmoke;
+    &:hover {
+        background-color: whitesmoke;
+        cursor: pointer;
+    }
+    &:active {
+        background-color: white;
+    }
+}
+
 .review-title {
     height: 20px;
     display: flex;
     align-items: flex-end;
-    img {
-        max-height: 100%;
+    h3 {
+        font-weight: 600;
     }
 }
 
@@ -63,6 +101,9 @@
     &:hover {
         background-color: whitesmoke;
         cursor: pointer;
+    }
+    &:active {
+        background-color: white;
     }
 }
 
