@@ -23,6 +23,7 @@ class ReviewForm extends React.Component {
     render(){
 
         const { product } = this.props;
+        const scoreValues = [1,2,3,4,5]
         if (!product ) return null;
         return(
             <div className="review-page">
@@ -36,11 +37,22 @@ class ReviewForm extends React.Component {
                     </div>
                     <div className="review-box-rating">
                         <h2>Overall rating</h2>
-                        <input type="radio" name="score" value={1} onClick={this.handleRadio}/>
+                        {scoreValues.map(score => (
+                            <input 
+                                key={score}
+                                type="radio" 
+                                name="score" 
+                                value={score}
+                                onClick={this.handleRadio} 
+                                defaultChecked={this.state.score == score}/>
+                        ))}
+                        {/* <input 
+                            type="radio" 
+                            name="score" value={1} onClick={this.handleRadio}/>
                         <input type="radio" name="score" value={2} onClick={this.handleRadio}/>
                         <input type="radio" name="score" value={3} onClick={this.handleRadio}/>
                         <input type="radio" name="score" value={4} onClick={this.handleRadio}/>
-                        <input type="radio" name="score" value={5} onClick={this.handleRadio}/>
+                        <input type="radio" name="score" value={5} onClick={this.handleRadio}/> */}
                     </div>
                     <h2>Add a headline</h2>
                     <input 
