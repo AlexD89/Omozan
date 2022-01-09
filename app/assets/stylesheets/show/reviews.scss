@@ -35,26 +35,14 @@
 }
 
 .temp {
-    // border: 1px solid black;
     width: 95px;
     height: 18px;
     background-image: image-url('stars-set.png');
     background-size: 120px;
-    background-repeat: no-repeat;
 }
 
-.num-5 {
-    background-position: -15px -8px;
-}
-.num-4 {
-    background-position: -15px -25px;
-}
-.num-3 {
-    background-position: -15px -42px;
-}
-.num-2 {
-    background-position: -15px -60px;
-}
-.num-1 {
-    background-position: -15px -77px;   
-}
+.num-5 { background-position: -15px -8px; }
+.num-4 { background-position: -15px -25px; }
+.num-3 { background-position: -15px -42px; }
+.num-2 { background-position: -15px -60px; }
+.num-1 { background-position: -15px -77px; }
