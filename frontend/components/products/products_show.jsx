@@ -69,6 +69,7 @@ class ProductsShow extends React.Component {
     render(){
         if (!this.props.product) return null;
         const { product, reviews } = this.props;
+        const reviewsArr = Object.values(reviews);
         return(
             <div className="show-page">
                 <div className="show-details">
@@ -159,7 +160,7 @@ class ProductsShow extends React.Component {
                     </aside>
                     <section>
                         <ul>
-                            {Object.values(reviews).map( review => (
+                            {reviewsArr.reverse().map( review => (
                                 <ReviewItem 
                                     review={review}
                                     key={review.id}/>
