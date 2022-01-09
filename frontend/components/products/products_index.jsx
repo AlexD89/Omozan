@@ -1,4 +1,4 @@
-import React from "react";
+    import React from "react";
 import ProductsIndexItem from "./product_index_item";
 
 class ProductsIndex extends React.Component {

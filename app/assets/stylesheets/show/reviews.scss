@@ -46,3 +46,22 @@
 .num-3 { background-position: -15px -42px; }
 .num-2 { background-position: -15px -60px; }
 .num-1 { background-position: -15px -77px; }
+
+.score-box {
+    margin-top: 5px;
+    width: 130px;
+    height: 20px;
+    background-image: image-url("stars-set-2");
+    background-size: 300px;
+}
+
+.avg-5 { background-position: -19px -14px; }
+.avg-4-5 { background-position: -159px -14px; }
+.avg-4 { background-position: -19px -39px; }
+.avg-3-5 { background-position: -159px -39px; }
+.avg-3 { background-position: -19px -63px; }
+.avg-2-5 { background-position: -159px -63px; }
+.avg-2 { background-position: -19px -87px; }
+.avg-1-5 { background-position: -159px -87px; }
+.avg-1 { background-position: -19px -111px; }
+.avg-0 { background-position: -19px -135px; }

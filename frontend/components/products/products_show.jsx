@@ -37,6 +37,30 @@ class ProductsShow extends React.Component {
         
     }
 
+    avgScore = score => {
+        if (score >= 1 && score < 1.5){
+            return "avg-1";
+        } else if (score >= 1.5 && score < 2) {
+            return "avg-1-5";
+        } else if (score >= 2 && score < 2.5){
+            return "avg-2";
+        } else if (score >= 2.5 && score < 3) {
+            return "avg-2-5";
+        } else if (score >= 3 && score < 3.5) {
+            return "avg-3";
+        } else if (score >= 3.5 && score < 4) {
+            return "avg-3-5";
+        } else if (score >= 4 && score < 4.3) {
+            return "avg-4";
+        } else if (score >= 4.3 && score < 4.8) {
+            return "avg-4-5";
+        } else if (score >= 4.8 && score <= 5) {
+            return "avg-5";
+        } else {
+            return "avg-0";
+        }
+    }
+
     getDecimals = (num) => {
         const n = num.toFixed(2);
         return n.slice(n.length-2)
@@ -53,9 +77,7 @@ class ProductsShow extends React.Component {
                     </figure>
                     <section className="show-description">
                         <h1>{product.title}</h1>
-                        <div className="score-img-box">
-                            <img src={window.starsURL} alt="stars" />
-                        </div>
+                        <div className={`score-box ${this.avgScore(product.avgScore)}`}></div>
                         <div className="divider"></div>
                         <div className="price-box">
                             <span className="decimals">$</span>
@@ -119,6 +141,7 @@ class ProductsShow extends React.Component {
                 <div className="show-reviews">
                     <aside>
                         <h1>Customer Reviews</h1>
+                        <div className={`score-box ${this.avgScore(product.avgScore)}`}></div>
                         <h3>Review this product</h3>
                         <p>Share your thoughts with other customers</p>
                         <Link to={
