@@ -9,7 +9,8 @@ const ReviewItem = (props) => {
                 {review.author}
             </div>
             <div className="review-title">
-                <img src={window.starsURL} alt="score" />
+                <div className={`temp num-${review.score}`}></div>    
+                {/* <img src={window.starsURL} alt="score" /> */}
                 {review.title}
             </div>
             <p>Verified Purcahse</p>

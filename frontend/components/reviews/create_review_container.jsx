@@ -6,7 +6,6 @@ import ReviewForm from "./review_form";
 
 class CreateReviewForm extends React.Component {
     componentDidMount() {
-        // this.props.requestReviews(this.props.match.params.productId);
         this.props.requestProduct(this.props.match.params.productId);
     }
 

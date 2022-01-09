@@ -6,9 +6,6 @@ class ReviewForm extends React.Component {
         this.state = this.props.review;
     }
 
-    // componentDidMount(){
-    //     this.props.requestProduct(this.props.match.params.productId)
-    // }
 
     handleSubmit = (e) => {
         e.preventDefault();
@@ -46,13 +43,6 @@ class ReviewForm extends React.Component {
                                 onClick={this.handleRadio} 
                                 defaultChecked={this.state.score == score}/>
                         ))}
-                        {/* <input 
-                            type="radio" 
-                            name="score" value={1} onClick={this.handleRadio}/>
-                        <input type="radio" name="score" value={2} onClick={this.handleRadio}/>
-                        <input type="radio" name="score" value={3} onClick={this.handleRadio}/>
-                        <input type="radio" name="score" value={4} onClick={this.handleRadio}/>
-                        <input type="radio" name="score" value={5} onClick={this.handleRadio}/> */}
                     </div>
                     <h2>Add a headline</h2>
                     <input 
