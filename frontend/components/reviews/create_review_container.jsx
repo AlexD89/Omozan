@@ -11,10 +11,11 @@ class CreateReviewForm extends React.Component {
 
 
     render() {
-        const { product, review, formAction } = this.props;
+        const { product, review, formAction, formType } = this.props;
         if (!review || !product) return null;
         return (
             <ReviewForm
+                formType={formType}
                 product={product}
                 review={review}
                 formAction={formAction} 
@@ -31,7 +32,8 @@ const mapStateToProps = (state, ownProps) => ({
         score: 0,
         author_id: state.session.currentUserId,
         product_id: ownProps.match.params.productId
-    }
+    },
+    formType: "create"
 })
 
 const mapDispatchToProps = dispatch => ({

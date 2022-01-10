@@ -66,6 +66,17 @@ textarea {
 }
 
 input[type=submit] {
+    border: 1px solid #fcdc50;
+    border-radius: 7px;
+    height: 30px;
+    background-color: #fcdc50;
+    &:hover {
+        background-color: #e6c535;
+        cursor: pointer;
+    }
+    &:active {
+        background-color: #fcdc50;
+    }
     width: 70px;
     align-self: flex-end;
 }

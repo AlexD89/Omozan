@@ -9,8 +9,14 @@ class ReviewForm extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.formAction(this.state)
+        if (this.props.formType === "edit"){
+            this.props.formAction(this.state)
             .then(() => this.props.history.push(`/products/${this.props.product.id}`))
+        } else {
+            console.log(this.props.formType)
+            this.props.formAction(this.state)
+            this.props.history.push(`/products/${this.props.product.id}`)
+        }
     }
 
     handleRadio = (e) => {
