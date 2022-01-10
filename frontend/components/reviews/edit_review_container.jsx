@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { requestProduct } from "../../actions/products_actions";
-import { deleteReview, requestReviews, updateReview } from "../../actions/reviews_actions";
+import { clearErrors, deleteReview, requestReviews, updateReview } from "../../actions/reviews_actions";
 import ReviewForm from "./review_form";
 
 class EditReviewForm extends React.Component {
@@ -10,12 +10,17 @@ class EditReviewForm extends React.Component {
         this.props.requestProduct(this.props.match.params.productId);
     }
 
+    componentWillUnmount(){
+        this.props.clearErrors()
+    }
+
 
     render(){
         const { product, review, formAction, formType } = this.props;
         if (!review || !product) return null;
         return (
             <ReviewForm 
+                errors={this.props.errors}
                 formType={formType}
                 deleteReview={this.props.deleteReview}
                 product={product}
@@ -36,6 +41,7 @@ const mapStateToProps = (state, ownProps) => {
     return {
         product: state.entities.products[ownProps.match.params.productId],
         review: reviewToEdit,
+        errors: state.errors.reviews,
         formType: "edit"
     };
 }
@@ -44,7 +50,8 @@ const mapDispatchToProps = dispatch => ({
     requestReviews: productId => dispatch(requestReviews(productId)),
     requestProduct: productId => dispatch(requestProduct(productId)),
     formAction: review => dispatch(updateReview(review)),
-    deleteReview: reviewId => dispatch(deleteReview(reviewId))
+    deleteReview: reviewId => dispatch(deleteReview(reviewId)),
+    clearErrors: () => dispatch(clearErrors())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditReviewForm)

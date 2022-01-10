@@ -37,6 +37,12 @@ class ProductsShow extends React.Component {
         
     }
 
+    reviewExist = () => (
+        Object.values(this.props.reviews).some(review => (
+            review.author_id == this.props.currentUserId
+        )) ? true : false
+    )
+
     avgScore = score => {
         if (score >= 1 && score < 1.5){
             return "avg-1";
@@ -150,13 +156,13 @@ class ProductsShow extends React.Component {
                         <h3>Review this product</h3>
                         <p>Share your thoughts with other customers</p>
                         <Link to={
-                                Object.values(reviews).some( review => (
-                                    review.author_id == this.props.currentUserId
-                                )) ? `/reviews/edit-review/${product.id}` : `/reviews/create-review/${product.id}`
+                                this.reviewExist() ? `/reviews/edit-review/${product.id}` : `/reviews/create-review/${product.id}`
                             } > 
-                            <button>{}Write a customer review</button>
+                            <button>
+                                {!this.reviewExist() ? 
+                                    "Write a customer review" : "Edit customer review "}
+                            </button>
                         </Link>
-                        {/* <div className="divider"></div> */}
                     </aside>
                     <section>
                         <ul>

@@ -6,19 +6,11 @@ class ReviewForm extends React.Component {
         this.state = this.props.review;
     }
 
-
     handleSubmit = (e) => {
         e.preventDefault();
-        if (this.props.formType === "edit"){
-            this.props.formAction(this.state)
-                .then(() => this.props.history.push(`/products/${this.props.product.id}`))
-        } else if (this.props.formType === "create") {
-            this.props.formAction(this.state)
-            window.setTimeout(() => this.props.history.push(`/products/${this.props.product.id}`), 10)
-        }
+        this.props.formAction(this.state)
+            .then(() => this.props.history.push(`/products/${this.props.product.id}`))
     }
-
-    
 
     handleRadio = (e) => {
         this.setState({ score: e.currentTarget.value })
@@ -38,9 +30,10 @@ class ReviewForm extends React.Component {
         }
     }
 
+
     render(){
 
-        const { product } = this.props;
+        const { product, errors } = this.props;
         const scoreValues = [1,2,3,4,5]
         if (!product ) return null;
         return(
@@ -82,6 +75,8 @@ class ReviewForm extends React.Component {
                                 <input id="radio-5" type="radio" name="score" value={5} onClick={this.handleRadio} defaultChecked={this.state.score == 5}/>
                                 <label htmlFor="radio-5" className={this.state.score >= 5 ? "radio-score checked-radio" : "radio-score"}></label>
                             </div>
+                            {errors.includes("Score must be greater than 0") ? 
+                                <p className="review-error">!  Please select a star rating</p> : ""}
                         </label>
                         <label><h2>Add a headline</h2>
                             <input 
@@ -89,13 +84,17 @@ class ReviewForm extends React.Component {
                                 value={this.state.title}
                                 onChange={e=>this.setState({title: e.currentTarget.value})}
                                 placeholder="Whats most important to know?"/>
+                            {errors.includes("Title can't be blank") ? 
+                                <p className="review-error">!  Please enter your headline</p> : ""}
                         </label>
                         <label><h2>Add a written review</h2>
                             <textarea 
                                 value={this.state.body}
                                 onChange={e=>this.setState({body: e.currentTarget.value})}
                                 placeholder="What did you like or dislike?
-                                                What did you use this product for?"/>
+                                What did you use this product for?"/>
+                            {errors.includes("Body can't be blank") ? 
+                                <p className="review-error">!  Please add a written review</p> : ""}
                         </label>
                         <div className="review-form-btns">
                             {this.renderDelete(this.props.formType)}

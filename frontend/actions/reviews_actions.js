@@ -36,11 +36,11 @@ export const requestReviews = (productId) => dispatch => (
         .then(reviews => dispatch(receiveAllReviews(reviews)))
 )
 
-export const createReview = ( review ) => dispatch => {
+export const createReview = ( review ) => dispatch => (
     ReviewsApiUtils.createReview(review)
         .then(review => dispatch(receiveReview(review)),
             errors => dispatch(receiveErrors(errors.responseJSON)))
-}
+)
 
 export const updateReview = ( review ) => dispatch => (
     ReviewsApiUtils.updateReview(review)

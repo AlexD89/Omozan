@@ -69,9 +69,9 @@
     align-self: flex-end;
     span {
         margin-right: 20px;
-    }
-    &:hover {
-        cursor: pointer;
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
 
@@ -123,5 +123,12 @@ form .stars-radio {
         background-position-y: -5%;
     }
 
+}
+
+// Error Messages
+
+.review-error {
+    margin-top: 15px;
+    color: red;
 }
 
