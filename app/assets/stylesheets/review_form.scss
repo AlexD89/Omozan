@@ -46,7 +46,7 @@
     }
 }
 
-input[type=text], textarea {
+.review-page input[type=text], textarea {
     border: 1px solid #6c6363;
     padding: 5px;
     border-radius: 3px;
@@ -61,11 +61,11 @@ input[type=text], textarea {
     }
 }
 
-textarea {
+.review-page textarea {
     height: 120px;
 }
 
-input[type=submit] {
+.review-page input[type=submit] {
     border: 1px solid #fcdc50;
     border-radius: 7px;
     height: 30px;
@@ -87,3 +87,32 @@ input[type=submit] {
         max-height: 100%;
     }
 }
+
+form .stars-radio {
+    display: flex;
+    input[type=radio] {
+        display: none;
+    }
+    label {
+        border-color: transparent;
+        padding: 0;
+    }
+}
+
+.radio-score {
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+    background-image: image-url("single-star");
+    background-size: 40px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    &:hover {
+        cursor: pointer;
+    }
+    &.checked-radio {
+        background-position-y: -5%;
+    }
+
+}
+

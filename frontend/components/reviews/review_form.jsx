@@ -14,7 +14,7 @@ class ReviewForm extends React.Component {
                 .then(() => this.props.history.push(`/products/${this.props.product.id}`))
         } else if (this.props.formType === "create") {
             this.props.formAction(this.state)
-            window.setTimeout(() => this.props.history.push(`/products/${this.props.product.id}`), 1)
+            window.setTimeout(() => this.props.history.push(`/products/${this.props.product.id}`), 10)
         }
     }
 
@@ -39,15 +39,33 @@ class ReviewForm extends React.Component {
                     </div>
                     <form onSubmit={this.handleSubmit}>
                         <label><h2>Overall rating</h2>
-                            {scoreValues.map(score => (
-                                <input 
-                                    key={score}
-                                    type="radio" 
-                                    name="score" 
-                                    value={score}
-                                    onClick={this.handleRadio} 
-                                    defaultChecked={this.state.score == score}/>
-                            ))}
+                            {/* {scoreValues.map((score, i) => (
+                                <div key={i}>
+                                    <input 
+                                        id={`radio${score}`}
+                                        type="radio" 
+                                        name="score" 
+                                        value={score}
+                                        onClick={this.handleRadio} 
+                                        defaultChecked={this.state.score == score}/>
+                                    <label 
+                                        htmlFor={`radio${score}`} 
+                                        className={this.state.score > i ? "radio-score checked-radio" : "radio-score"}>5
+                                    </label>
+                                </div>
+                            ))} */}
+                            <div className="stars-radio">
+                                <input id="radio-1" type="radio" name="score" value={1} onClick={this.handleRadio} defaultChecked={this.state.score == 1}/>
+                                <label htmlFor="radio-1" className={this.state.score >= 1 ? "radio-score checked-radio" : "radio-score"}></label>
+                                <input id="radio-2" type="radio" name="score" value={2} onClick={this.handleRadio} defaultChecked={this.state.score == 2}/>
+                                <label htmlFor="radio-2" className={this.state.score >= 2 ? "radio-score checked-radio" : "radio-score"}></label>
+                                <input id="radio-3" type="radio" name="score" value={3} onClick={this.handleRadio} defaultChecked={this.state.score == 3}/>
+                                <label htmlFor="radio-3" className={this.state.score >= 3 ? "radio-score checked-radio" : "radio-score"}></label>
+                                <input id="radio-4" type="radio" name="score" value={4} onClick={this.handleRadio} defaultChecked={this.state.score == 4}/>
+                                <label htmlFor="radio-4" className={this.state.score >= 4 ? "radio-score checked-radio" : "radio-score"}></label>
+                                <input id="radio-5" type="radio" name="score" value={5} onClick={this.handleRadio} defaultChecked={this.state.score == 5}/>
+                                <label htmlFor="radio-5" className={this.state.score >= 5 ? "radio-score checked-radio" : "radio-score"}></label>
+                            </div>
                         </label>
                         <label><h2>Add a headline</h2>
                             <input 
