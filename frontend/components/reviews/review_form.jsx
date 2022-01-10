@@ -11,11 +11,10 @@ class ReviewForm extends React.Component {
         e.preventDefault();
         if (this.props.formType === "edit"){
             this.props.formAction(this.state)
-            .then(() => this.props.history.push(`/products/${this.props.product.id}`))
-        } else {
-            console.log(this.props.formType)
+                .then(() => this.props.history.push(`/products/${this.props.product.id}`))
+        } else if (this.props.formType === "create") {
             this.props.formAction(this.state)
-            this.props.history.push(`/products/${this.props.product.id}`)
+            window.setTimeout(() => this.props.history.push(`/products/${this.props.product.id}`), 1)
         }
     }
 
