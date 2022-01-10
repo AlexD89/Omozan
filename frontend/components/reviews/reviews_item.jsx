@@ -16,7 +16,7 @@ const ReviewItem = (props) => {
             </div>
             <h4>Verified Purcahse</h4>
             <p>{review.body}</p>
-            <button>Helpful</button> | Report abuse
+            <button><i className="fas fa-check-circle"></i>Helpful</button> | Report abuse
         </div>
     )
 }

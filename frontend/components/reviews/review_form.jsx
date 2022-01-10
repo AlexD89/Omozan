@@ -10,6 +10,7 @@ class ReviewForm extends React.Component {
         e.preventDefault();
         this.props.formAction(this.state)
             .then(() => this.props.history.push(`/products/${this.props.product.id}`))
+            .then(() => window.scroll(0,0))
     }
 
     handleRadio = (e) => {
@@ -34,7 +35,6 @@ class ReviewForm extends React.Component {
     render(){
 
         const { product, errors } = this.props;
-        const scoreValues = [1,2,3,4,5]
         if (!product ) return null;
         return(
             <div className="review-page">
@@ -48,21 +48,6 @@ class ReviewForm extends React.Component {
                     </div>
                     <form onSubmit={this.handleSubmit}>
                         <label><h2>Overall rating</h2>
-                            {/* {scoreValues.map((score, i) => (
-                                <div key={i}>
-                                    <input 
-                                        id={`radio${score}`}
-                                        type="radio" 
-                                        name="score" 
-                                        value={score}
-                                        onClick={this.handleRadio} 
-                                        defaultChecked={this.state.score == score}/>
-                                    <label 
-                                        htmlFor={`radio${score}`} 
-                                        className={this.state.score > i ? "radio-score checked-radio" : "radio-score"}>5
-                                    </label>
-                                </div>
-                            ))} */}
                             <div className="stars-radio">
                                 <input id="radio-1" type="radio" name="score" value={1} onClick={this.handleRadio} defaultChecked={this.state.score == 1}/>
                                 <label htmlFor="radio-1" className={this.state.score >= 1 ? "radio-score checked-radio" : "radio-score"}></label>
