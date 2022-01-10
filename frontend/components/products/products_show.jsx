@@ -68,7 +68,7 @@ class ProductsShow extends React.Component {
 
     render(){
         if (!this.props.product) return null;
-        const { product, reviews } = this.props;
+        const { product, reviews, formType } = this.props;
         const reviewsArr = Object.values(reviews);
         return(
             <div className="show-page">
@@ -121,7 +121,7 @@ class ProductsShow extends React.Component {
                             Add to Cart
                         </button>
                         <br />
-                        <button className="purchase-btn">Buy Now</button>
+                        <button className="purchase-btn" onClick={e=>location.reload()}>Buy Now</button>
                         <p><span className="blue">Secure transactions</span></p>
                         <table>
                             <tbody>
@@ -154,7 +154,7 @@ class ProductsShow extends React.Component {
                                     review.author_id == this.props.currentUserId
                                 )) ? `/reviews/edit-review/${product.id}` : `/reviews/create-review/${product.id}`
                             } > 
-                            <button>Write a customer review</button>
+                            <button>{}Write a customer review</button>
                         </Link>
                         {/* <div className="divider"></div> */}
                     </aside>

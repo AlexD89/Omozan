@@ -7,9 +7,52 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'open-uri'
+require 'CSV'
+
+authors = CSV.read("app/assets/authors.csv")
+
+def generateTitle(arr)
+    arr = arr.flatten.shuffle
+    title = arr.shift.capitalize
+    (rand(3..7)).times {title += " #{arr.shift}"}
+    title
+end
+
+def generateBody(arr)
+    arr = arr.flatten.shuffle
+    body = arr.shift.capitalize
+    (rand(80..160)).times {body += " #{arr.shift}"}
+    body
+end
+
+def create_users(arr) 
+    users = []
+    arr.each do |author|
+        users << { username: "#{author[0]} #{author[1]}",
+        email: "#{author[1]}@gmail.com",
+        password: "hunter12" }
+    end
+    users.each {|new_user| User.create!(new_user)}
+end
+
+def create_reviews(num)
+    words = CSV.read("app/assets/words.csv")
+    Product.all.each do |product|
+        authors_ids = User.all.map{|author| author.id}.shuffle
+        num.times do |i|
+            Review.create!({title: generateTitle(words), 
+            body: generateBody(words), 
+                            score: rand(2..5), 
+                            author_id: authors_ids.shift,
+                            product_id: product.id})
+            
+        end
+    end
+end
 
 User.destroy_all
 Product.destroy_all
+Review.destroy_all
 
 User.create!({
     username: "Demo User",
@@ -17,17 +60,9 @@ User.create!({
     password: "demo_user_3000"
 })
 
-User.create!({
-    username: "Alex",
-    email: "alex@gmail.com",
-    password: "hunter12"
-})
+create_users(authors)
 
-User.create!({
-    username: "Isabel",
-    email: "isabel@gmail.com",
-    password: "hunter12"
-})
+
 
 ipsum_desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et ante congue, cursus nisl nec, dapibus justo. Duis est tortor, bibendum sit amet aliquam eu, sodales eu neque. Sed a tortor sit amet diam gravida mattis. Vestibulum efficitur non tellus a vestibulum. Nam pellentesque tincidunt eros, sit amet pretium augue aliquam in. Ut vel mi urna. Morbi fermentum odio urna, hendrerit efficitur ante dignissim et. In dapibus augue quis tempus faucibus. Vestibulum vel leo nisl. Donec neque quam, placerat in enim eget, sodales accumsan nisl.
 
@@ -102,19 +137,21 @@ product6 = Product.create!(bowflex)
 product7 = Product.create!(echo_glow)
 product8 = Product.create!(smart_plug)
 
-file1 = URI.open('https://omozan-seeds.s3.amazonaws.com/img3.jpg')
-product1.image.attach(io: file1, filename: "img3.jpg")
-file2 = URI.open('https://omozan-seeds.s3.amazonaws.com/img1.jpg')
-product7.image.attach(io: file2, filename: "img1.jpg")
-file3 = URI.open('https://omozan-seeds.s3.amazonaws.com/img2.jpg')
-product8.image.attach(io: file3, filename: "img2.jpg")
-file4 = URI.open('https://omozan-seeds.s3.amazonaws.com/img4.jpg')
-product2.image.attach(io: file4, filename: "img4.jpg")
-file5 = URI.open('https://omozan-seeds.s3.amazonaws.com/img5.jpg')
-product5.image.attach(io: file5, filename: "img6.jpg")
-file6 = URI.open('https://omozan-seeds.s3.amazonaws.com/img6.jpg')
-product3.image.attach(io: file6, filename: "img6.jpg")
-file7 = URI.open('https://omozan-seeds.s3.amazonaws.com/img7.jpg')
-product4.image.attach(io: file7, filename: "img7.jpg")
-file8 = URI.open('https://omozan-seeds.s3.amazonaws.com/img8.jpg')
-product6.image.attach(io: file8, filename: "img8.jpg")
+create_reviews(6)
+
+#file1 = URI.open('https://omozan-seeds.s3.amazonaws.com/img3.jpg')
+#product1.image.attach(io: file1, filename: "img3.jpg")
+#file2 = URI.open('https://omozan-seeds.s3.amazonaws.com/img1.jpg')
+#product7.image.attach(io: file2, filename: "img1.jpg")
+#file3 = URI.open('https://omozan-seeds.s3.amazonaws.com/img2.jpg')
+#product8.image.attach(io: file3, filename: "img2.jpg")
+#file4 = URI.open('https://omozan-seeds.s3.amazonaws.com/img4.jpg')
+#product2.image.attach(io: file4, filename: "img4.jpg")
+#file5 = URI.open('https://omozan-seeds.s3.amazonaws.com/img5.jpg')
+#product5.image.attach(io: file5, filename: "img6.jpg")
+#file6 = URI.open('https://omozan-seeds.s3.amazonaws.com/img6.jpg')
+#product3.image.attach(io: file6, filename: "img6.jpg")
+#file7 = URI.open('https://omozan-seeds.s3.amazonaws.com/img7.jpg')
+#product4.image.attach(io: file7, filename: "img7.jpg")
+#file8 = URI.open('https://omozan-seeds.s3.amazonaws.com/img8.jpg')
+#product6.image.attach(io: file8, filename: "img8.jpg")

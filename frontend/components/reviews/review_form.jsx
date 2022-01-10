@@ -18,8 +18,24 @@ class ReviewForm extends React.Component {
         }
     }
 
+    
+
     handleRadio = (e) => {
         this.setState({ score: e.currentTarget.value })
+    }
+
+    handleDelete = e => {
+        this.props.deleteReview(this.props.review.id)
+            .then(() => this.props.history.push(`/products/${this.props.product.id}`))
+    }
+
+    renderDelete = (formType) => {
+        if (formType === 'edit') {
+            return <span 
+                onClick={this.handleDelete}
+                className="blue">
+                    Delete Review</span>;
+        }
     }
 
     render(){
@@ -81,7 +97,10 @@ class ReviewForm extends React.Component {
                                 placeholder="What did you like or dislike?
                                                 What did you use this product for?"/>
                         </label>
-                        <input type="submit" value="Submit" />
+                        <div className="review-form-btns">
+                            {this.renderDelete(this.props.formType)}
+                            <input type="submit" value="Submit" />
+                        </div>
                     </form>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { requestProduct } from "../../actions/products_actions";
-import { requestReviews, updateReview } from "../../actions/reviews_actions";
+import { deleteReview, requestReviews, updateReview } from "../../actions/reviews_actions";
 import ReviewForm from "./review_form";
 
 class EditReviewForm extends React.Component {
@@ -17,6 +17,7 @@ class EditReviewForm extends React.Component {
         return (
             <ReviewForm 
                 formType={formType}
+                deleteReview={this.props.deleteReview}
                 product={product}
                 review={review}
                 formAction={formAction}
@@ -42,7 +43,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => ({
     requestReviews: productId => dispatch(requestReviews(productId)),
     requestProduct: productId => dispatch(requestProduct(productId)),
-    formAction: review => dispatch(updateReview(review))
+    formAction: review => dispatch(updateReview(review)),
+    deleteReview: reviewId => dispatch(deleteReview(reviewId))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditReviewForm)

@@ -65,6 +65,16 @@
     height: 120px;
 }
 
+.review-form-btns {
+    align-self: flex-end;
+    span {
+        margin-right: 20px;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}
+
 .review-page input[type=submit] {
     border: 1px solid #fcdc50;
     border-radius: 7px;
@@ -78,7 +88,6 @@
         background-color: #fcdc50;
     }
     width: 70px;
-    align-self: flex-end;
 }
 
 .review-form-img {
