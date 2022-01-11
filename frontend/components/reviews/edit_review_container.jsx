@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import { requestProduct } from "../../actions/products_actions";
 import { clearErrors, deleteReview, requestReviews, updateReview } from "../../actions/reviews_actions";
 import ReviewForm from "./review_form";

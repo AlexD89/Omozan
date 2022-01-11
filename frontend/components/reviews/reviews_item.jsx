@@ -1,6 +1,20 @@
 import React from "react";
+import { FaCheckCircle } from "react-icons/fa"
+
 
 const ReviewItem = (props) => {
+    
+    const handleHelpful = e => {
+        e.currentTarget.className="hidden"
+        $(`.helpful-${props.review.id}`).toggle();
+    }
+
+    const handleAbuse = () => {
+        window.open("https://ca.sc.gov/sites/default/files/Documents/Images/report%20abuse.jpg", 
+                        "Report Content is inapropriate", 
+                        "left=0,top=0,width=640,height=480")
+    }
+
 
 
     const {review} = props;
@@ -16,7 +30,11 @@ const ReviewItem = (props) => {
             </div>
             <h4>Verified Purcahse</h4>
             <p>{review.body}</p>
-            <button><i className="fas fa-check-circle"></i>Helpful</button> | Report abuse
+            <div className="helpful-box">
+                <button onClick={e => handleHelpful(e)}>Helpful</button> 
+                <div className={`helpful-${review.id} green hidden`}><FaCheckCircle /> </div><p className={`helpful-${review.id} green hidden`} >Thank you for your feedback.</p> 
+                <p>|<span onClick={handleAbuse}>Report abuse</span></p>
+            </div>
         </div>
     )
 }
