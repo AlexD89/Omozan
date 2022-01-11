@@ -46,11 +46,11 @@ class Navbar extends React.Component {
         return(
             <header>
                 <div className="nav-bar">
-                    <div className="header-logo">
-                        <Link to="/" >
+                    <Link to="/" >
+                        <div className="header-logo">
                             <img src={window.logoURL} alt="logo" />
-                        </Link>
-                    </div>
+                        </div>
+                    </Link>
                     <div>
                         <SerchBarContainer />
                     </div>
@@ -72,13 +72,13 @@ class Navbar extends React.Component {
                 <div className="categories">
                     <ul>
                         <Link to="/products"><li>All</li></Link>
-                        <li>Computers</li>
-                        <li>Electronics</li>
-                        <li>Omozan Home</li>
-                        <li>Books</li>
-                        <li>Movies</li>
-                        <li>Pet Supplies</li>
-                        <li>Home Improvment</li>
+                        <Link to="/products"><li>Computers</li></Link>
+                        <Link to="/products"><li>Electronics</li></Link>
+                        <Link to="/products"><li>Omozan Home</li></Link>
+                        <Link to="/products"><li>Books</li></Link>
+                        <Link to="/products"><li>Movies</li></Link>
+                        <Link to="/products"><li>Pet Supplies</li></Link>
+                        <Link to="/products"><li>Home Improvment</li></Link>
                     </ul>
                 </div>
             </header>
