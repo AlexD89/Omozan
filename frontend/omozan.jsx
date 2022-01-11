@@ -7,6 +7,7 @@ import { login, logout, signup } from "./actions/session_actions";
 import { requestProduct, requestAllProducts } from "./actions/products_actions"
 import { addCartItem, deleteCartItem, requestCartItems, updateCartItem } from "./actions/cart_items_actions";
 import { requestReviews, createReview, updateReview, deleteReview } from "./actions/reviews_actions"
+import { requestDepartments, requestDepartment } from './actions/departments_actions'
 //testing
 
 document.addEventListener("DOMContentLoaded",()=>{
@@ -44,6 +45,9 @@ document.addEventListener("DOMContentLoaded",()=>{
     window.createReview = createReview;
     window.updateReview = updateReview;
     window.deleteReview = deleteReview;
+
+    window.requestDepartments =requestDepartments;
+    window.requestDepartment = requestDepartment;
     //Testing Area
 
     ReactDOM.render(<Root store={store} />, document.getElementById("root"));
