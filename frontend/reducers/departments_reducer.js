@@ -8,7 +8,7 @@ const departmentsReducer = (state = {}, action) => {
         case RECEIVE_ALL_DEPARTMENTS:
             return action.departments;
         case RECEIVE_DEPARTMENT:
-            nextState[action.department.id] = action.department
+            nextState[action.department.department] = action.department
             return nextState;
         default:
             return state;

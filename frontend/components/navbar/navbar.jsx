@@ -73,12 +73,12 @@ class Navbar extends React.Component {
                     <ul>
                         <Link to="/products"><li>All</li></Link>
                         <Link to="/products"><li>Computers</li></Link>
-                        <Link to="/products"><li>Electronics</li></Link>
-                        <Link to="/products"><li>Omozan Home</li></Link>
-                        <Link to="/products"><li>Books</li></Link>
-                        <Link to="/products"><li>Movies</li></Link>
-                        <Link to="/products"><li>Pet Supplies</li></Link>
-                        <Link to="/products"><li>Home Improvment</li></Link>
+                        <Link to="/departments/Electronics"><li>Electronics</li></Link>
+                        <Link to="/departments/OmozanHome"><li>Omozan Home</li></Link>
+                        <Link to="/departments/Books"><li>Books</li></Link>
+                        <Link to="/departments/Movies"><li>Movies</li></Link>
+                        <Link to="/departments/PetSupplies"><li>Pet Supplies</li></Link>
+                        <Link to="/departments/HomeImprovment"><li>Home Improvment</li></Link>
                     </ul>
                 </div>
             </header>
