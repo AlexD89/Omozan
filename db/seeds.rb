@@ -7,21 +7,33 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'open-uri'
-require 'CSV'
 
-authors = CSV.read("app/assets/authors.csv")
+usernames = [["Robert", "Desnos"], ["Peter", "Hoeg"], ["Pete", "Dexter"], ["Nelson", "DeMille"], ["Anita", "Desai"], ["Robin", "Hobb"], 
+        ["Barbara", "Cartland"], ["Nick", "Bantock"], ["Harlan", "Ellison"], ["Michael", "Frayn"], ["Angela", "Carter"], ["Lorna", "Goodison"], 
+        ["Carlos", "Castaneda"], ["John", "Fowles"], ["John", "Banville"], ["Bhabananda", "Deka"], ["Anne", "Frank"], ["Chester", "Himes"], 
+        ["Russell", "Hoban"], ["William", "Golding"], ["Iain", "Banks"], ["James", "Hilton"], ["Christopher", "Hitchens"], ["Paul", "Goodman"], 
+        ["Jonathan", "Franzen"], ["Melissa", "Bank"], ["Sigmund", "Freud"], ["Raymond", "Carver"], ["John", "Henry"]] 
+words = ["stop", "studied", "thing", "apple", "cool", "simplest", "lead", "fair", "these", "religious", "outside", "elephant", "blew", "blue", "somehow", 
+        "trunk", "respect", "sick", "speak", "complex", "leader", "greater", "dirt", "quickly", "balloon", "meal", "college", "vast", "lost", "signal", 
+        "express", "agree", "scared", "circus", "along", "evidence", "package", "stiff", "struck", "describe", "apart", "leaving", "never", "carried", 
+        "wet", "twenty", "brick", "massage", "fair", "wire", "love", "donkey", "beside", "way", "written", "hand", "fifth", "cream", "image", "today", 
+        "heading", "joy", "off", "sense", "football", "at", "grabbed", "native", "came", "rocket", "letter", "forest", "bad", "mistake", "wet", "toward", 
+        "become", "generally", "safety", "drawn", "development", "jack", "function", "organized", "deer", "key", "feet", "today", "first", "due", "include", 
+        "strike", "loud", "orbit", "depth", "cannot", "none", "heard", "seeing", "must", "build", "announced", "quick", "stomach", "brief", "visitor", 
+        "immediately", "proper", "when", "throw", "late", "within", "of", "eventually", "gravity", "thread", "effect", "doubt", "leaving", "magnet", "field", 
+        "rain", "strange", "sea", "forgotten", "kids", "able", "brother", "valley", "easy", "bread", "capital", "usually", "similar", "castle", "carbon"]
 
 def generateTitle(arr)
-    arr = arr.flatten.shuffle
-    title = arr.shift.capitalize
-    (rand(3..7)).times {title += " #{arr.shift}"}
+    arr = arr.shuffle
+    title = arr[rand(1..133)].capitalize
+    (rand(3..7)).times {title += (" " + arr[rand(1..133)])}
     title
 end
 
 def generateBody(arr)
     arr = arr.flatten.shuffle
-    body = arr.shift.capitalize
-    (rand(80..160)).times {body += " #{arr.shift}"}
+    body = arr[rand(1..133)].capitalize
+    (rand(50..200)).times {body += (" " + arr[rand(1..133)])}
     body
 end
 
@@ -35,13 +47,12 @@ def create_users(arr)
     users.each {|new_user| User.create!(new_user)}
 end
 
-def create_reviews(num)
-    words = CSV.read("app/assets/words.csv")
+def create_reviews(num, words)
     Product.all.each do |product|
         authors_ids = User.all.map{|author| author.id}.shuffle
         num.times do |i|
             Review.create!({title: generateTitle(words), 
-            body: generateBody(words), 
+                            body: generateBody(words), 
                             score: rand(2..5), 
                             author_id: authors_ids.shift,
                             product_id: product.id})
@@ -60,7 +71,7 @@ User.create!({
     password: "demo_user_3000"
 })
 
-create_users(authors)
+create_users(usernames)
 
 
 
@@ -137,7 +148,7 @@ product6 = Product.create!(bowflex)
 product7 = Product.create!(echo_glow)
 product8 = Product.create!(smart_plug)
 
-create_reviews(6)
+create_reviews(6, words)
 
 #file1 = URI.open('https://omozan-seeds.s3.amazonaws.com/img3.jpg')
 #product1.image.attach(io: file1, filename: "img3.jpg")
