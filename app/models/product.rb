@@ -12,4 +12,12 @@ class Product < ApplicationRecord
         foreign_key: :product_id,
         class_name: :Review
 
+    has_many :department_items,
+        foreign_key: :product_id,
+        class_name: :DepartmentItem
+
+    has_many :departments,
+        through: :department_items,
+        class_name: :Department
+
 end
