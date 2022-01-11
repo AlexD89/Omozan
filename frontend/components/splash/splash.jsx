@@ -19,6 +19,8 @@ class Splash extends React.Component {
                             <div className="img-box">
                                 <img src={window.img1} alt="" />
                             </div>
+                        </Link>
+                        <Link to={`/products/${linkArr[6]}`}>
                             Shop Echo glow
                         </Link>
                     </div>
@@ -28,6 +30,8 @@ class Splash extends React.Component {
                             <div className="img-box">
                                 <img src={window.img2} alt="" />
                             </div>
+                        </Link>
+                        <Link to={`/products/${linkArr[6]}`}>
                             Shop Amazon smart plug
                         </Link>
                     </div>
@@ -37,6 +41,8 @@ class Splash extends React.Component {
                             <div className="img-box">
                                 <img src={window.img3} alt="" />
                             </div>
+                        </Link>
+                        <Link to={`/products/${linkArr[6]}`}>
                             Shop Apple Macbook
                         </Link>
                     </div>
@@ -46,6 +52,8 @@ class Splash extends React.Component {
                             <div className="img-box">
                                 <img src={window.img4} alt="" />
                             </div>
+                        </Link>
+                        <Link to={`/products/${linkArr[6]}`}>
                             Shop Amazon Books
                         </Link>
                     </div>
@@ -55,6 +63,8 @@ class Splash extends React.Component {
                             <div className="img-box">
                                 <img src={window.img5} alt="" />
                             </div>
+                        </Link>
+                        <Link to={`/products/${linkArr[6]}`}>
                             Shop Spider-Man movie
                         </Link>
                     </div>
@@ -64,6 +74,8 @@ class Splash extends React.Component {
                             <div className="img-box">
                                 <img src={window.img6} alt="" />
                             </div>
+                        </Link>
+                        <Link to={`/products/${linkArr[6]}`}>
                             Shop Bose Headphones
                         </Link>
                     </div>
@@ -73,6 +85,8 @@ class Splash extends React.Component {
                             <div className="img-box">
                                 <img src={window.img7} alt="" />
                             </div>
+                        </Link>
+                        <Link to={`/products/${linkArr[6]}`}>
                             Shop DEWALT tool kit 
                         </Link>
                     </div>
@@ -82,6 +96,8 @@ class Splash extends React.Component {
                             <div className="img-box">
                                 <img src={window.img8} alt="" />
                             </div>
+                        </Link>
+                        <Link to={`/products/${linkArr[6]}`}>
                             Shop Bowflex Dumbbell
                         </Link>
                     </div>
