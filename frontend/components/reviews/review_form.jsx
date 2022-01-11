@@ -11,7 +11,7 @@ class ReviewForm extends React.Component {
         e.preventDefault();
         this.props.formAction(this.state)
             .then(() => this.props.history.push(`/products/${this.props.product.id}`))
-            .then(() => window.scroll(0,0))
+            .then(() => window.scroll(0,800))
     }
 
     handleRadio = (e) => {
