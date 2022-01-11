@@ -35,7 +35,7 @@ class Navbar extends React.Component {
                     Hello, Sign in
                     <br />
                     <span>
-                        Acount
+                        Account
                     </span>
                 </div>
             )

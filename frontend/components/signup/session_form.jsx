@@ -31,13 +31,67 @@ class SessionForm extends React.Component {
         this.props.processForm(demoUser);
     }
 
-    renderErrors = () => (
-        <ul className="session-errors">
-            {this.props.errors.map((error, i) => (
-                <li key={i} >{error}</li>
-            ))}
-        </ul>
-    )
+    renderErrors = (field) => {
+        switch (field) {
+            case "username":
+                if (this.props.errors.includes("Username can't be blank")) {
+                    return <p className="inline-error">❗️ Username can't be blank</p>
+                } else return ""
+            case "email":
+                if (this.props.errors.includes("Wrong email/password") ||
+                    this.props.errors.includes("Email can't be blank")) {
+                    // this.setState({email: ""})
+                    return <p className="inline-error">
+                        {this.props.formType === "Login" ? 
+                            "❗️ Wrong email/password" : "❗️ Email can't be blank"}
+                    </p>
+                } else return ""
+            case "password":
+                if (this.props.errors.includes("Wrong email/password") ||
+                    this.props.errors.includes("Password is too short (minimum is 6 characters)")) {
+                    // this.setState({password: ""})
+                    return <p className="inline-error">
+                        {this.props.formType === "Login" ? 
+                            "❗️ Wrong email/password" : "❗️ Password is too short (minimum is 6 characters)"}
+                    </p>
+                } else return ""
+            case "password-confirm":
+                if (this.props.errors.includes("Password confirmation doesn't match Password")) {
+                    return <p className="inline-error">
+                        ❗️ Password confirmation doesn't match Password
+                    </p>
+                } else return ""
+            default:
+                return ""
+        }
+    }
+
+    redStyle = (field) => {
+        switch (field){
+            case "username":
+                if (this.props.errors.includes("Username can't be blank")){
+                    return "red-field"
+                } else return ""
+            case "email":
+                if (this.props.errors.includes("Wrong email/password") ||
+                    this.props.errors.includes("Email can't be blank")) {
+                        return "red-field"
+                } else return ""
+            case "password":
+                if (this.props.errors.includes("Wrong email/password") || 
+                    this.props.errors.includes("Password is too short (minimum is 6 characters)")){
+                    return "red-field"
+                } else return ""
+            case "password-confirm":
+                if (this.props.errors.includes("Password confirmation doesn't match Password") ||
+                    (this.state.password_confirmation.length === 0 &&
+                    this.props.errors.includes("Password is too short (minimum is 6 characters)"))){
+                    return "red-field"
+                } else return ""
+            default:
+                return ""
+        }
+    }
 
     render(){
         const { errors, formType } = this.props;
@@ -54,35 +108,42 @@ class SessionForm extends React.Component {
                             <label><span>Your name</span>
                                 <br />
                                 <input
+                                    className={this.redStyle("username")}
                                     type="text"
                                     onChange={(e) => this.setState({ username: e.currentTarget.value })} />
                                 <br />
                             </label>) : ("")
                         }
+                        {this.renderErrors("username")}
                         <label><span>Email</span>
-                            <br />
-                            <input 
+                            <input
+                                className={this.redStyle("email")}
                                 type="text"
                                 onChange={(e) => this.setState({email: e.currentTarget.value})} />
                         </label>
+                        {this.renderErrors("email")}
                         <br />
                         <label><span>Password</span>
                             <br />
                             <input
                                 type="password"
+                                className={this.redStyle("password")}
                                 onChange={(e) => this.setState({ password: e.currentTarget.value })}
                                 placeholder={formType === "Login" ? "" : "At least 6 characters"} />
                         </label>
+                        {this.renderErrors("password")}
                         <br />
                         {formType === "Signup" ? (
                             <label><span>Confirm Password</span>
                                 <br />
                                 <input
+                                    className={this.redStyle("password-confirm")}
                                     type="password"
                                     onChange={(e) => this.setState({ password_confirmation: e.currentTarget.value })} />
                                 <br />
                             </label>) : ("")
                         }
+                        {this.renderErrors("password-confirm")}
                         <input 
                             type="submit" 
                             value={formType === "Login" ? "Sign-in" : "Create your Amazon account"} />
@@ -91,7 +152,6 @@ class SessionForm extends React.Component {
                         <button onClick={this.handleDemoUser}>Demo User</button>
                     ) : ("")}
                     <br />
-                    {this.renderErrors()}
                 </div>
                 <div className="divider">
                     {formType === "Login" ? (

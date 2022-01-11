@@ -10,6 +10,7 @@ class ProductsShow extends React.Component {
     }
     
     componentDidMount(){
+        window.scrollTo(0,0);
         this.props.requestProduct(this.props.match.params.productId);
         this.props.requestReviews(this.props.match.params.productId);
     }

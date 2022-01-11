@@ -92,3 +92,26 @@
     color: red;
     list-style-type: disc;
 }
+
+//// errors style
+
+.form-box input[type=text], .form-box input[type=password]{
+    box-shadow: inset 0px 0px 2px 2px whitesmoke;
+    &:focus {
+        background-color: rgb(245, 252, 255);
+        outline-style: none;
+        border: 1px solid darkorange;
+        box-shadow: 0 0 5px 1px orange;
+    }
+}
+
+input[type=text].red-field, input[type=password].red-field {
+    border: 1px solid red;
+    box-shadow: inset 0 0 10px -5px red;
+    margin-bottom: 10px;
+}
+
+.inline-error {
+    color: red;
+    font-size: 14px;
+}
