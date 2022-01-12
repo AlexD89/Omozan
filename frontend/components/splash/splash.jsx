@@ -5,6 +5,10 @@ class Splash extends React.Component {
     componentDidMount(){
         this.props.requestAllProducts()
     }
+    
+    componentWillUnmount(){
+        this.props.clearProducts()
+    }
 
     render(){
 

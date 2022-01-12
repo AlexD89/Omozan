@@ -7,7 +7,6 @@ class Api::DepartmentsController < ApplicationController
 
     def show
         @department = Department.find_by(department: params[:id])
-        # debugger
         if @department
             render :show
         else

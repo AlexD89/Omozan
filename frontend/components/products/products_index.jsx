@@ -1,18 +1,30 @@
-    import React from "react";
+import React from "react";
 import ProductsIndexItem from "./product_index_item";
 
 class ProductsIndex extends React.Component {
 
     componentDidMount(){
-        this.props.requestAllProducts();
-        // this.props.requestDepartments();
-        // this.props.requestDepartment(this.props.match.params.departmentName)
+        if (this.props.match.params.departmentName === "all"){
+            this.props.requestAllProducts()
+        } else {
+            this.props.requestDepartmentProducts(this.props.match.params.departmentName)
+        }
     }
 
+    componentDidUpdate(prevProps){
+        if(this.props.location.pathname !== prevProps.location.pathname){
+            (this.props.match.params.departmentName === "all") ? (
+                this.props.requestAllProducts()
+            ) : (
+                this.props.requestDepartmentProducts(this.props.match.params.departmentName)
+            )
+        }
+    }  
+
     render(){
-        // if (!this.props.department) return null;
         const { products } = this.props;
-        // const pro = products.filter(product => this.props.department.product_ids.includes(product.id))
+        if (!products) return null;
+        
         return(
             <div className="index-page">  
                 <ul className="product-grid">
