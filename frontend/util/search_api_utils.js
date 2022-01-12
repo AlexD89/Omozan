@@ -1,6 +1,6 @@
-export const fetchSearchProducts = (
+export const fetchSearchProducts = (dep, title) => (
     $.ajax({
         method: "GET",
-        url: "/api/searches"
+        url: `/api/searches/?dep=${dep}&title=${title}`
     })
 )

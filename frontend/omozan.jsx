@@ -8,6 +8,8 @@ import { requestProduct, requestAllProducts } from "./actions/products_actions"
 import { addCartItem, deleteCartItem, requestCartItems, updateCartItem } from "./actions/cart_items_actions";
 import { requestReviews, createReview, updateReview, deleteReview } from "./actions/reviews_actions"
 import { requestDepartments, requestDepartment } from './actions/departments_actions'
+import { requestSearchProducts } from "./actions/search_actions";
+
 //testing
 
 document.addEventListener("DOMContentLoaded",()=>{
@@ -45,6 +47,8 @@ document.addEventListener("DOMContentLoaded",()=>{
     window.createReview = createReview;
     window.updateReview = updateReview;
     window.deleteReview = deleteReview;
+
+    window.requestSearchProducts = requestSearchProducts;
 
     window.requestDepartments =requestDepartments;
     //Testing Area
