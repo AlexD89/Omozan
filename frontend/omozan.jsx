@@ -47,7 +47,6 @@ document.addEventListener("DOMContentLoaded",()=>{
     window.deleteReview = deleteReview;
 
     window.requestDepartments =requestDepartments;
-    window.requestDepartment = requestDepartment;
     //Testing Area
 
     ReactDOM.render(<Root store={store} />, document.getElementById("root"));

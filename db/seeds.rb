@@ -94,8 +94,6 @@ cellphones = Department.create!(department: "cellphones")
 pets_supplies = Department.create!(department: "pet_supplies") 
 kitchen = Department.create!(department: "kitchen") 
 
-DepartmentItem.create!(product_id: product1.id ,department_id: furniture.id)
-
 
 # NEW Items
 
@@ -368,7 +366,7 @@ chezmoi = Product.create!({
     description: ipsum_desc,
     price: 85.87
 })
-DepartmentItem.create!(product_id: imucci.id ,department_id: bed_bath.id)
+DepartmentItem.create!(product_id: chezmoi.id ,department_id: bed_bath.id)
 
 dhruvi = Product.create!({
     title: 'Dhruvi Bedding Ultra Soft Luxurious Silk Like Satin 7-Piece Comforter Set (Comforter + Flat Sheet + Fitted Sheet + 4 Pillow Cases), Durable Comfort Bedding Set (California King/Black)',
@@ -507,85 +505,85 @@ binnune = Product.create!({
 })
 DepartmentItem.create!(product_id: binnune.id ,department_id: electronics.id)
 
-
-mac_book = {
-    title: "2020 Apple MacBook Air Laptop: Apple M1 Chip, 13” Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID.",
-    description: ipsum_desc,
-    category: "Computers",
-    price: 1299.00
-}
-
-atomic_habits= {
-    title: "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones",
-    description: ipsum_desc,
-    category: "Books",
-    price: 9.99
-}
-
-bose_45 = {
-    title: "New Bose QuietComfort 45 Bluetooth Wireless Noise Canceling Headphones - Triple Black",
-    description: ipsum_desc,
-    category: "Electronics",
-    price: 299.00
-}
-
-dewalt_kit = {
-    title: "DEWALT 20V Max Cordless Drill Combo Kit, 2-Tool (DCK240C2),Yellow/Black Drill Driver/Impact Combo Kit",
-    description: ipsum_desc,
-    category: "Home Improvment",
-    price: 129.99
-}
-
-sm_movie = {
-    title: "Spider-Man: No Way Home",
-    description: ipsum_desc,
-    category: "Movies",
-    price: 19.99
-}
-
-bowflex = {
-    title: "Bowflex (552i) 2-24 Kg SelectTech Dumbbell (x1) by Bowflex",
-    description: ipsum_desc,
-    category: "Gym equipment",
-    price: 199.99
-}
-
-echo_glow = {
-    title: "Echo Glow - Multicolor smart lamp for kids, a Certified for Humans Device – Requires compatible Alexa device",
-    description: ipsum_desc,
-    category: "Amazon Home",
-    price: 29.90
-}
-
-smart_plug = {
-    title: "Amazon Smart Plug, Works with Alexa – A Certified for Humans Device",
-    description: ipsum_desc,
-    category: "Amazon Home",
-    price: 12.99
-}
-
-
-
-
-
-product1 = Product.create!(mac_book)
-DepartmentItem.create!(product_id: product1.id ,department_id: computers.id)
-product2 = Product.create!(atomic_habits)
-DepartmentItem.create!(product_id: product2.id ,department_id: books.id)
-product3 = Product.create!(bose_45)
-DepartmentItem.create!(product_id: product3.id ,department_id: electronics.id)
-product4 = Product.create!(dewalt_kit)
-DepartmentItem.create!(product_id: product4.id ,department_id: home_improvement.id)
-product5 = Product.create!(sm_movie)
-DepartmentItem.create!(product_id: product5.id ,department_id: movies.id)
-product6 = Product.create!(bowflex)
-DepartmentItem.create!(product_id: product6.id ,department_id: pets_supplies.id)
-product7 = Product.create!(echo_glow)
-DepartmentItem.create!(product_id: product7.id ,department_id: omozan_home.id)
-product8 = Product.create!(smart_plug)
-DepartmentItem.create!(product_id: product8.id ,department_id: omozan_home.id)
-
 create_reviews(6, words)
+
+# mac_book = {
+#     title: "2020 Apple MacBook Air Laptop: Apple M1 Chip, 13” Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID.",
+#     description: ipsum_desc,
+#     category: "Computers",
+#     price: 1299.00
+# }
+
+# atomic_habits= {
+#     title: "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones",
+#     description: ipsum_desc,
+#     category: "Books",
+#     price: 9.99
+# }
+
+# bose_45 = {
+#     title: "New Bose QuietComfort 45 Bluetooth Wireless Noise Canceling Headphones - Triple Black",
+#     description: ipsum_desc,
+#     category: "Electronics",
+#     price: 299.00
+# }
+
+# dewalt_kit = {
+#     title: "DEWALT 20V Max Cordless Drill Combo Kit, 2-Tool (DCK240C2),Yellow/Black Drill Driver/Impact Combo Kit",
+#     description: ipsum_desc,
+#     category: "Home Improvment",
+#     price: 129.99
+# }
+
+# sm_movie = {
+#     title: "Spider-Man: No Way Home",
+#     description: ipsum_desc,
+#     category: "Movies",
+#     price: 19.99
+# }
+
+# bowflex = {
+#     title: "Bowflex (552i) 2-24 Kg SelectTech Dumbbell (x1) by Bowflex",
+#     description: ipsum_desc,
+#     category: "Gym equipment",
+#     price: 199.99
+# }
+
+# echo_glow = {
+#     title: "Echo Glow - Multicolor smart lamp for kids, a Certified for Humans Device – Requires compatible Alexa device",
+#     description: ipsum_desc,
+#     category: "Amazon Home",
+#     price: 29.90
+# }
+
+# smart_plug = {
+#     title: "Amazon Smart Plug, Works with Alexa – A Certified for Humans Device",
+#     description: ipsum_desc,
+#     category: "Amazon Home",
+#     price: 12.99
+# }
+
+
+
+
+
+# product1 = Product.create!(mac_book)
+# DepartmentItem.create!(product_id: product1.id ,department_id: computers.id)
+# product2 = Product.create!(atomic_habits)
+# DepartmentItem.create!(product_id: product2.id ,department_id: books.id)
+# product3 = Product.create!(bose_45)
+# DepartmentItem.create!(product_id: product3.id ,department_id: electronics.id)
+# product4 = Product.create!(dewalt_kit)
+# DepartmentItem.create!(product_id: product4.id ,department_id: home_improvement.id)
+# product5 = Product.create!(sm_movie)
+# DepartmentItem.create!(product_id: product5.id ,department_id: movies.id)
+# product6 = Product.create!(bowflex)
+# DepartmentItem.create!(product_id: product6.id ,department_id: pets_supplies.id)
+# product7 = Product.create!(echo_glow)
+# DepartmentItem.create!(product_id: product7.id ,department_id: omozan_home.id)
+# product8 = Product.create!(smart_plug)
+# DepartmentItem.create!(product_id: product8.id ,department_id: omozan_home.id)
+
 
 #file1 = URI.open('https://omozan-seeds.s3.amazonaws.com/img3.jpg')
 #product1.image.attach(io: file1, filename: "img3.jpg")
