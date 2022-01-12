@@ -25,6 +25,7 @@ const App = () => {
             <Route path="/products/:productId" component={ProductsShowContainer}/>
             <Route path="/products" component={ProductsIndexContainer}/>
             <Route path="/departments/:departmentName" component={ProductsIndexContainer}/>
+            <Route path="/search/" component={ProductsIndexContainer}/>
             <ProtectedRoute path="/cart" component={CartIndexContainer}/>
             <ProtectedRoute path="/reviews/create-review/:productId" component={CreateReviewContainer}/>
             <ProtectedRoute path="/reviews/edit-review/:productId" component={EditReviewContainer}/>

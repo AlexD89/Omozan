@@ -2,22 +2,41 @@ import React from "react";
 
 
 class Searchbar extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = ({
+            dep: "",
+            title: ""
+        })
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(this.state.dep)
+        console.log(this.state.title)
+    }
 
     render(){
         return(
             <div className="search-bar">
-                <select>
-                    <option value="">All</option>
-                    <option value="">Computers</option>
-                    <option value="">Electronics</option>
-                    <option value="">Omozone Home</option>
-                    <option value="">Books</option>
-                    <option value="">Movies</option>
-                    <option value="">Pet Supplies</option>
-                    <option value="">Home Improvment</option>
-                </select>
-                <input type="search" placeholder="Search Bar"/>
-                <input type="image" src={window.glassIconURL} alt="search-image" />
+                <form onSubmit={this.handleSubmit}>
+                    <select 
+                        onChange={e=>this.setState({dep: e.currentTarget.value})}
+                        defaultValue={"all"}>
+                        <option value="all">All</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="computers">Computers</option>
+                        <option value="furniture">Furniture</option>
+                        <option value="bed_bath">Bed {"&"} Bath</option>
+                        <option value="cellphones">Cellphones</option>
+                        <option value="pet_supplies">Pet Supplies</option>
+                        <option value="kitchen">Kitchen</option>
+                    </select>
+                    <input
+                        onChange={e=>this.setState({title: e.currentTarget.value})} 
+                        type="text"/>
+                    <input type="image" src={window.glassIconURL} alt="search-image" />
+                </form>
             </div>
         )
     }
