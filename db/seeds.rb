@@ -165,94 +165,217 @@ choochoo = Product.create!({
 # --------
 #------------------
 
-= Product.create!({
-    title:,
+earth_rated = Product.create!({
+    title: 'Earth Rated Dog Poop Bags, Extra Thick and Strong Poop Bags for Dogs, Guaranteed Leak-proof, 15 Doggy Bags Per Roll, Each Dog Poop Bag Measures 9 x 13 Inches',
     description: ipsum_desc,
-    price:
+    price: 11.99
 })
-= Product.create!({
-    title:,
+dream_bone = Product.create!({
+    title: 'DreamBone DreamBone Twist Sticks',
     description: ipsum_desc,
-    price:
+    price: 4.68
 })
-= Product.create!({
-    title:,
+glad_pads = Product.create!({
+    title: 'Glad for Pets Black Charcoal Puppy Pads-New & Improved Puppy Potty Training Pads That ABSORB & NEUTRALIZE Urine Instantly-Training Pads for Dogs, Dog Pee Pads, Pee Pads for Dogs, Dog Crate Pads',
     description: ipsum_desc,
-    price:
+    price:24.63
 })
-= Product.create!({
-    title:,
+wobble_wag = Product.create!({
+    title: 'Wobble Wag Giggle Ball, Interactive Dog Toy, Fun Giggle Sounds When Rolled or Shaken, Pets Know Best, As Seen On TV',
     description: ipsum_desc,
-    price:
+    price: 6.89
 })
-= Product.create!({
-    title:,
+gonicc = Product.create!({
+    title: 'gonicc Dog & Cat Pets Nail Clippers and Trimmers - with Safety Guard to Avoid Over Cutting, Free Nail File, Razor Sharp Blade - Professional Grooming Tool for Pets',
     description: ipsum_desc,
-    price:
+    price: 13.95
 })
-= Product.create!({
-    title:,
+meow = Product.create!({
+    title: 'Meow Mix Original Choice Dry Cat Food',
     description: ipsum_desc,
-    price:
+    price: 17.98
 })
-= Product.create!({
-    title:,
+fresh_step = Product.create!({
+    title: 'Fresh Step Scented Litter with The Power of Febreze, Clumping Cat Litter',
     description: ipsum_desc,
-    price:
+    price: 9.54
 })
-= Product.create!({
-    title:,
+angry_orange = Product.create!({
+    title: 'ANGRY ORANGE Pet Odor Eliminator for Strong Odor - Citrus Deodorizer for Dog or Cat Urine Smells on Carpet, Furniture & Floors - Puppy Supplies﻿',
     description: ipsum_desc,
-    price:
+    price: 19.97
 })
 
 # --------
 #------------------
 
-= Product.create!({
-    title:,
+pixel = Product.create!({
+    title: 'Google Pixel 6 – 5G Android Phone - Unlocked Smartphone with Wide and Ultrawide Lens - 128GB - Stormy Black',
     description: ipsum_desc,
-    price:
+    price: 599.00
 })
-= Product.create!({
-    title:,
+galaxys20 = Product.create!({
+    title: 'SAMSUNG Galaxy S20 FE 5G Factory Unlocked Android Cell Phone 128GB US Version Smartphone Pro-Grade Camera 30X Space Zoom Night Mode, Cloud Navy',
     description: ipsum_desc,
-    price:
+    price:599.00
 })
-= Product.create!({
-    title:,
+tcl_20 = Product.create!({
+    title: 'TCL 20 SE 6.82" Unlocked Cellphone, 4GB RAM + 128GB ROM, US Version Android 11 Smartphone with 48MP Rear AI Quad-Camera, 5000mAh Big Battery, Dual Speaker, OTG Reverse Charging, Octa-Core, Nuit Black',
     description: ipsum_desc,
-    price:
+    price: 189.99
 })
-= Product.create!({
-    title:,
+ulefone = Product.create!({
+    title: 'Unlocked Smartphones Ulefone Note 11P, 48MP+8MP+2MP+2MP, Dual Sim Phones Unlocked, Andorid 11 8GB+128GB ROM, 6.55" FHD, Fingerprint Face Detection, 4500mAh high Capacity Battery, AT&T, T-Mobile - Red',
     description: ipsum_desc,
-    price:
+    price: 169.99
 })
-= Product.create!({
-    title:,
+motog = Product.create!({
+    title: 'Moto G Power | 2021 | 3-Day battery | Unlocked | Made for US by Motorola | 4/64GB | 48MP Camera | Gray',
     description: ipsum_desc,
-    price:
+    price:219.99
 })
-= Product.create!({
-    title:,
+easyfone = Product.create!({
+    title: 'Easyfone Prime-A6 4G Unlocked Big Button Basic Senior Cell Phone, Easy-to-Use Mobile Phone for Elderly with SOS Button, Hearing Aid Compatible and Charging Dock, FCC Certified (Black)',
     description: ipsum_desc,
-    price:
+    price: 69.99
 })
-= Product.create!({
-    title:,
+imidigi = Product.create!({
+    title: 'UMIDIGI Bison X10 PRO Rugged Smartphone, Rugged Cell Phone Unlocked, IP68/IP69K Waterproof, Android 11, NFC, 6.53" FHD Screen, 6150mAh Battery, 4G Dual SIM (Bison X10 PRO 4+128G, Supersonic Yellow)',
     description: ipsum_desc,
-    price:
+    price: 239.99
 })
-= Product.create!({
-    title:,
+nokia = Product.create!({
+    title: 'Nokia 225 | Unlocked | 4G Cell Phone | Black',
     description: ipsum_desc,
-    price:
+    price: 44.98
 })
 
 # --------
 
+= Product.create!({
+    title:,
+    description: ipsum_desc,
+    price:
+})
+= Product.create!({
+    title:,
+    description: ipsum_desc,
+    price:
+})
+= Product.create!({
+    title:,
+    description: ipsum_desc,
+    price:
+})
+= Product.create!({
+    title:,
+    description: ipsum_desc,
+    price:
+})
+= Product.create!({
+    title:,
+    description: ipsum_desc,
+    price:
+})
+= Product.create!({
+    title:,
+    description: ipsum_desc,
+    price:
+})
+= Product.create!({
+    title:,
+    description: ipsum_desc,
+    price:
+})
+= Product.create!({
+    title:,
+    description: ipsum_desc,
+    price:
+})
+# --------
 
+= Product.create!({
+    title:,
+    description: ipsum_desc,
+    price:
+})
+= Product.create!({
+    title:,
+    description: ipsum_desc,
+    price:
+})
+= Product.create!({
+    title:,
+    description: ipsum_desc,
+    price:
+})
+= Product.create!({
+    title:,
+    description: ipsum_desc,
+    price:
+})
+= Product.create!({
+    title:,
+    description: ipsum_desc,
+    price:
+})
+= Product.create!({
+    title:,
+    description: ipsum_desc,
+    price:
+})
+= Product.create!({
+    title:,
+    description: ipsum_desc,
+    price:
+})
+= Product.create!({
+    title:,
+    description: ipsum_desc,
+    price:
+})
+# --------
+
+= Product.create!({
+    title:,
+    description: ipsum_desc,
+    price:
+})
+= Product.create!({
+    title:,
+    description: ipsum_desc,
+    price:
+})
+= Product.create!({
+    title:,
+    description: ipsum_desc,
+    price:
+})
+= Product.create!({
+    title:,
+    description: ipsum_desc,
+    price:
+})
+= Product.create!({
+    title:,
+    description: ipsum_desc,
+    price:
+})
+= Product.create!({
+    title:,
+    description: ipsum_desc,
+    price:
+})
+= Product.create!({
+    title:,
+    description: ipsum_desc,
+    price:
+})
+= Product.create!({
+    title:,
+    description: ipsum_desc,
+    price:
+})
 
 
 
