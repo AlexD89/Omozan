@@ -58,7 +58,8 @@ end
 
 def create_reviews(num, words)
     Product.all.each do |product|
-        authors_ids = User.all.map{|author| author.id}.shuffle
+        authors_ids = User.all
+        authors_ids[1..-1].map{|author| author.id}.shuffle
         num.times do |i|
             Review.create!({title: generateTitle(words), 
                             body: generateBody(words), 
@@ -507,97 +508,47 @@ DepartmentItem.create!(product_id: binnune.id ,department_id: electronics.id)
 
 create_reviews(6, words)
 
-# mac_book = {
-#     title: "2020 Apple MacBook Air Laptop: Apple M1 Chip, 13” Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID.",
-#     description: ipsum_desc,
-#     category: "Computers",
-#     price: 1299.00
-# }
+# products = [macbook_air,hp_laptop,acer_laptop,acer_nitro,cyberpowerpc,rog_strix,imac,vibe,
+#     lifestyle_sofa,setore_sofa,tyboatle_sofa,dolonm_chair,yaheetech,prepac,wlive,
+#     choochoo,earth_rated,dream_bone,glad_pads,wobble_wag,gonicc,meow,fresh_step,
+#     angry_orange,pixel,galaxys20,tcl_20,ulefone,motog,easyfone,imidigi,nokia,
+#     mason,siga,renpho,imucci,chezmoi,dhruvi,vcny,boho,vortex,rechael_ray,
+#     ball_regular,cotey,gibson,henkels,home_vss,joy_jolt,bose,soundlink,deskjet,
+#     kodak,polaroid,fujifilm,logitech,binnune]
 
-# atomic_habits= {
-#     title: "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones",
-#     description: ipsum_desc,
-#     category: "Books",
-#     price: 9.99
-# }
-
-# bose_45 = {
-#     title: "New Bose QuietComfort 45 Bluetooth Wireless Noise Canceling Headphones - Triple Black",
-#     description: ipsum_desc,
-#     category: "Electronics",
-#     price: 299.00
-# }
-
-# dewalt_kit = {
-#     title: "DEWALT 20V Max Cordless Drill Combo Kit, 2-Tool (DCK240C2),Yellow/Black Drill Driver/Impact Combo Kit",
-#     description: ipsum_desc,
-#     category: "Home Improvment",
-#     price: 129.99
-# }
-
-# sm_movie = {
-#     title: "Spider-Man: No Way Home",
-#     description: ipsum_desc,
-#     category: "Movies",
-#     price: 19.99
-# }
-
-# bowflex = {
-#     title: "Bowflex (552i) 2-24 Kg SelectTech Dumbbell (x1) by Bowflex",
-#     description: ipsum_desc,
-#     category: "Gym equipment",
-#     price: 199.99
-# }
-
-# echo_glow = {
-#     title: "Echo Glow - Multicolor smart lamp for kids, a Certified for Humans Device – Requires compatible Alexa device",
-#     description: ipsum_desc,
-#     category: "Amazon Home",
-#     price: 29.90
-# }
-
-# smart_plug = {
-#     title: "Amazon Smart Plug, Works with Alexa – A Certified for Humans Device",
-#     description: ipsum_desc,
-#     category: "Amazon Home",
-#     price: 12.99
-# }
+# pics = ["macbook_air","hp_laptop","acer_laptop","acer_nitro","cyberpowerpc","rog_strix","imac","vibe",
+#     "lifestyle_sofa","setore_sofa","tyboatle_sofa","dolonm_chair","yaheetech","prepac","wlive",
+#     "choochoo","earth_rated","dream_bone","glad_pads","wobble_wag","gonicc","meow","fresh_step",
+#     "angry_orange","pixel","galaxys20","tcl_20","ulefone","motog","easyfone","imidigi","nokia",
+#     "mason","siga","renpho","imucci","chezmoi","dhruvi","vcny","boho","vortex","rechael_ray",
+#     "ball_regular","cotey","gibson","henkels","home_vss","joy_jolt","bose","soundlink","deskjet",
+#     "kodak","polaroid","fujifilm","logitech","binnune"]
 
 
 
+# def connectImages(products, pics)
+#     products.each_with_index do |product, idx|
+#        file = URI.open("https://omozan-seeds.s3.amazonaws.com/#{pics[idx]}.jpg")
+#        product.image.attach(io: file, filename: "#{pics[idx]}.jpg") 
+#     end
+# end
 
 
-# product1 = Product.create!(mac_book)
-# DepartmentItem.create!(product_id: product1.id ,department_id: computers.id)
-# product2 = Product.create!(atomic_habits)
-# DepartmentItem.create!(product_id: product2.id ,department_id: books.id)
-# product3 = Product.create!(bose_45)
-# DepartmentItem.create!(product_id: product3.id ,department_id: electronics.id)
-# product4 = Product.create!(dewalt_kit)
-# DepartmentItem.create!(product_id: product4.id ,department_id: home_improvement.id)
-# product5 = Product.create!(sm_movie)
-# DepartmentItem.create!(product_id: product5.id ,department_id: movies.id)
-# product6 = Product.create!(bowflex)
-# DepartmentItem.create!(product_id: product6.id ,department_id: pets_supplies.id)
-# product7 = Product.create!(echo_glow)
-# DepartmentItem.create!(product_id: product7.id ,department_id: omozan_home.id)
-# product8 = Product.create!(smart_plug)
-# DepartmentItem.create!(product_id: product8.id ,department_id: omozan_home.id)
+# file1 = URI.open('https://omozan-seeds.s3.amazonaws.com/macbook_air.jpg')
+# macbook_air.image.attach(io: file1, filename: "macbook_air.jpg")
+# file2 = URI.open('https://omozan-seeds.s3.amazonaws.com/hp_laptop.jpg')
+# hp_laptop.image.attach(io: file2, filename: "hp_laptop.jpg")
+# file3 = URI.open('https://omozan-seeds.s3.amazonaws.com/acer_laptop.jpg')
+# acer_laptop.image.attach(io: file3, filename: "acer_laptop.jpg")
+# file4 = URI.open('https://omozan-seeds.s3.amazonaws.com/acer_nitro.jpg')
+# acer_nitro.image.attach(io: file4, filename: "acer_nitro.jpg")
+# file5 = URI.open('https://omozan-seeds.s3.amazonaws.com/cyberpowerpc.jpg')
+# cyberpowerpc.image.attach(io: file5, filename: "cyberpowerpc.jpg")
+# file6 = URI.open('https://omozan-seeds.s3.amazonaws.com/rog_strix.jpg')
+# rog_strix.image.attach(io: file6, filename: "rog_strix.jpg")
+# file7 = URI.open('https://omozan-seeds.s3.amazonaws.com/imac.jpg')
+# imac.image.attach(io: file7, filename: "imac.jpg")
+# file8 = URI.open('https://omozan-seeds.s3.amazonaws.com/vibe.jpg')
+# vibe.image.attach(io: file8, filename: "vibe.jpg")
 
 
-#file1 = URI.open('https://omozan-seeds.s3.amazonaws.com/img3.jpg')
-#product1.image.attach(io: file1, filename: "img3.jpg")
-#file2 = URI.open('https://omozan-seeds.s3.amazonaws.com/img1.jpg')
-#product7.image.attach(io: file2, filename: "img1.jpg")
-#file3 = URI.open('https://omozan-seeds.s3.amazonaws.com/img2.jpg')
-#product8.image.attach(io: file3, filename: "img2.jpg")
-#file4 = URI.open('https://omozan-seeds.s3.amazonaws.com/img4.jpg')
-#product2.image.attach(io: file4, filename: "img4.jpg")
-#file5 = URI.open('https://omozan-seeds.s3.amazonaws.com/img5.jpg')
-#product5.image.attach(io: file5, filename: "img6.jpg")
-#file6 = URI.open('https://omozan-seeds.s3.amazonaws.com/img6.jpg')
-#product3.image.attach(io: file6, filename: "img6.jpg")
-#file7 = URI.open('https://omozan-seeds.s3.amazonaws.com/img7.jpg')
-#product4.image.attach(io: file7, filename: "img7.jpg")
-#file8 = URI.open('https://omozan-seeds.s3.amazonaws.com/img8.jpg')
-#product6.image.attach(io: file8, filename: "img8.jpg")
