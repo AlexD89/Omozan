@@ -252,87 +252,87 @@ nokia = Product.create!({
 
 # --------
 
-= Product.create!({
-    title:,
+mason = Product.create!({
+    title: 'Mason Jar Bathroom Accessories Set 4 - Mason Jar Soap Dispenser & 2 Apothecary Jars & Toothbrush Holder - Rustic Farmhouse Restroom, Bathroom Home Decor Clearance, Countertop Vanity Organizer, Black',
     description: ipsum_desc,
-    price:
+    price: 24.99
 })
-= Product.create!({
-    title:,
+siga = Product.create!({
+    title: 'MR.SIGA Toilet Plunger and Bowl Brush Combo for Bathroom Cleaning, Black, 1 Set',
     description: ipsum_desc,
-    price:
+    price: 21.98
 })
-= Product.create!({
-    title:,
+renpho = Product.create!({
+    title: 'RENPHO Body Fat Scale Smart BMI Scale Digital Bathroom Wireless Weight Scale, Body Composition Analyzer with Smartphone App sync with Bluetooth, 396 lbs - Black',
     description: ipsum_desc,
-    price:
+    price: 26.99
 })
-= Product.create!({
-    title:,
+imucci = Product.create!({
+    title: 'iMucci Pink 8pcs Bathroom Accessories Set - with Trash Can Toothbrush Holder Soap Dispenser Soap and Lotion Set Tumbler',
     description: ipsum_desc,
-    price:
+    price: 39.99
 })
-= Product.create!({
-    title:,
+chezmoi = Product.create!({
+    title: 'Chezmoi Collection 7-Piece Jacquard Floral Comforter Set (Queen, Maroon)',
     description: ipsum_desc,
-    price:
+    price: 85.87
 })
-= Product.create!({
-    title:,
+dhruvi = Product.create!({
+    title: 'Dhruvi Bedding Ultra Soft Luxurious Silk Like Satin 7-Piece Comforter Set (Comforter + Flat Sheet + Fitted Sheet + 4 Pillow Cases), Durable Comfort Bedding Set (California King/Black)',
     description: ipsum_desc,
-    price:
+    price: 175.99
 })
-= Product.create!({
-    title:,
+vcny = Product.create!({
+    title: 'VCNY Home Casa Real Collection Comforter Soft & Cozy Bedding Set, Stylish Chic Design for Home Décor, Machine Washable, Full/Queen, Purple 5 Piece',
     description: ipsum_desc,
-    price:
+    price: 41.16
 })
-= Product.create!({
-    title:,
+boho = Product.create!({
+    title: 'Boho Floral Duvet Cover King Size Set Vintage Floral Duvet Cover Bedding Set Comforter Cover Set Smooth Soft Floral Bedding Collection 1 Duvet Cover with 2 Pillowcases (HY King)',
     description: ipsum_desc,
-    price:
+    price: 49.99
 })
 # --------
 
-= Product.create!({
-    title:,
+vortex = Product.create!({
+    title: 'Instant Vortex Plus 4 Quart Air Fryer, Customizable Smart Cooking Programs, Digital Touchscreen and Non-Stick Air Fryer Basket, Stainless Steel',
+    description: ipsum_desc,
+    price: 99.95
+})
+rechael_ray = Product.create!({
+    title: 'Rachael Ray - 87630 Rachael Ray Cucina Hard Anodized Nonstick Cookware Pots and Pans Set, 12 Piece, Gray with Red Handles',
+    description: ipsum_desc,
+    price: 189.99
+})
+ball_regular = Product.create!({
+    title: 'Ball Regular Mouth 32-Ounces Mason Jar with Lids and Bands (2-Units), Pack of 2, Clear',
+    description: ipsum_desc,
+    price: 12.40
+})
+cotey = Product.create!({
+    title: 'COTEY Large 3.5" Nonstick Egg Rings Set of 4, Round Crumpet Ring Mold Shaper for English Muffins Pancake Cooking Griddle - Portable Grill Accessories for Camping Indoor Breakfast Sandwich Burger',
+    description: ipsum_desc,
+    price: 12.95
+})
+gibson = Product.create!({
+    title: 'Gibson Home Rockaway 12-Piece Dinnerware Set Service for 4, Grey Matte',
+    description: ipsum_desc,
+    price: 39.99
+})
+henkels = Product.create!({
+    title: 'HENCKELS Classic Chefs Knife, 6-Inch, Black, Stainless Steel, Kitchen Knife',
     description: ipsum_desc,
     price:
 })
-= Product.create!({
-    title:,
+ home_vss= Product.create!({
+    title: 'HomeVss, Stoneware Sonoma 16pc Dinnerware Set, Black + Speckled Spin Wash Purple',
     description: ipsum_desc,
-    price:
+    price: 69.99
 })
-= Product.create!({
-    title:,
+joy_jolt = Product.create!({
+    title: 'JoyJolt Savor Double Wall Insulated Glasses Espresso Mugs (Set of 2) - 5.4-Ounces',
     description: ipsum_desc,
-    price:
-})
-= Product.create!({
-    title:,
-    description: ipsum_desc,
-    price:
-})
-= Product.create!({
-    title:,
-    description: ipsum_desc,
-    price:
-})
-= Product.create!({
-    title:,
-    description: ipsum_desc,
-    price:
-})
-= Product.create!({
-    title:,
-    description: ipsum_desc,
-    price:
-})
-= Product.create!({
-    title:,
-    description: ipsum_desc,
-    price:
+    price: 14.40
 })
 # --------
 
