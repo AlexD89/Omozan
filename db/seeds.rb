@@ -322,7 +322,7 @@ gibson = Product.create!({
 henkels = Product.create!({
     title: 'HENCKELS Classic Chefs Knife, 6-Inch, Black, Stainless Steel, Kitchen Knife',
     description: ipsum_desc,
-    price:
+    price: 44.67
 })
  home_vss= Product.create!({
     title: 'HomeVss, Stoneware Sonoma 16pc Dinnerware Set, Black + Speckled Spin Wash Purple',
@@ -336,45 +336,45 @@ joy_jolt = Product.create!({
 })
 # --------
 
-= Product.create!({
-    title:,
+bose= Product.create!({
+    title: 'New Bose QuietComfort 45 Bluetooth Wireless Noise Canceling Headphones - Triple Black',
     description: ipsum_desc,
-    price:
+    price: 329.00
 })
-= Product.create!({
-    title:,
+soundlink = Product.create!({
+    title: 'New Bose SoundLink Flex Bluetooth Portable Speaker, Wireless Waterproof Speaker for Outdoor Travel - White',
     description: ipsum_desc,
-    price:
+    price: 149.00
 })
-= Product.create!({
-    title:,
+deskjet = Product.create!({
+    title: 'HP DeskJet 4155e All-in-One Wireless Color Printer, with bonus 6 months free Instant Ink with HP+ (26Q90A)',
     description: ipsum_desc,
-    price:
+    price: 109.89
 })
-= Product.create!({
-    title:,
+kodak = Product.create!({
+    title: 'KODAK Step Wireless Mobile Photo Mini Printer (White) Compatible w/ iOS & Android, NFC & Bluetooth Devices',
     description: ipsum_desc,
-    price:
+    price: 69.99
 })
-= Product.create!({
-    title:,
+polaroid = Product.create!({
+    title: 'Polaroid Originals Now I-Type Instant Camera - Red (9032)',
     description: ipsum_desc,
-    price:
+    price: 89.99
 })
-= Product.create!({
-    title:,
+fujifilm = Product.create!({
+    title: 'Fujifilm instax Mini 9 Instant Camera (Flamingo Pink) and instax Film Twin Pack (20 Exposures) Bundle Pink',
     description: ipsum_desc,
-    price:
+    price: 77.95
 })
-= Product.create!({
-    title:,
+logitech = Product.create!({
+    title: 'Logitech C920x HD Pro Webcam, Full HD 1080p/30fps Video Calling, Clear Stereo Audio, HD Light Correction, Works with Skype, Zoom, FaceTime, Hangouts, PC/Mac/Laptop/Macbook/Tablet - Black',
     description: ipsum_desc,
-    price:
+    price: 59.99
 })
-= Product.create!({
-    title:,
+binnune = Product.create!({
+    title: 'BINNUNE Wireless Gaming Headset with Microphone for PC PS4 PS5 Playstation 4 5, 2.4G Wireless Bluetooth USB Gamer Headphones with Mic for Laptop Computer',
     description: ipsum_desc,
-    price:
+    price: 36.54
 })
 
 
