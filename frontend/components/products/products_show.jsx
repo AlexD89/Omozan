@@ -15,6 +15,10 @@ class ProductsShow extends React.Component {
         this.props.requestReviews(this.props.match.params.productId);
     }
 
+    componentWillUnmount(){
+        this.props.clearProducts()
+    }
+
     handleAddProduct = (e) => {
         e.preventDefault();
         if (this.props.currentUserId) {
