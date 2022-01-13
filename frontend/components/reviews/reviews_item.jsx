@@ -10,7 +10,7 @@ const ReviewItem = (props) => {
     }
 
     const handleAbuse = () => {
-        window.open("https://ca.sc.gov/sites/default/files/Documents/Images/report%20abuse.jpg", 
+        window.open(window.report_abuseURL, 
                         "Report Content is inapropriate", 
                         "left=0,top=0,width=640,height=480")
     }
