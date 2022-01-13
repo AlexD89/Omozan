@@ -1,0 +1,10 @@
+.empty-cart {
+    background-color: white;
+    height: calc(100vh - 180px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        max-height: 50%;
+    }
+}

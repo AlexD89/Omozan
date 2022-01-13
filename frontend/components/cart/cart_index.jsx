@@ -22,6 +22,18 @@ class CartIndex extends React.Component {
         return total.toFixed(2);
     }
 
+    handleCheckout = (e) => {
+        e.preventDefault();
+        const products = this.props.products;
+        const cartItems = Object.values(this.props.cartItems);
+        this.props.history.push({
+            pathname: "/checkout", 
+            state: {
+                products: products, 
+                cartItems: cartItems
+        }})
+    }
+
 
     render(){
         const { products, cartItems, deleteCartItem, updateCartItem} = this.props;
@@ -63,7 +75,7 @@ class CartIndex extends React.Component {
                             />
                         This order contains a gift
                     </label>
-                    <button>Proceed to checkout</button>
+                    <button onClick={this.handleCheckout}>Proceed to checkout</button>
                 </aside>
             </div>
         )
