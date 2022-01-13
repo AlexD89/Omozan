@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SerchBarContainer from "../searchbar/serchbar_container";
+import Searchbar from "../searchbar/serachbar";
 
 
 class Navbar extends React.Component {
@@ -52,7 +52,7 @@ class Navbar extends React.Component {
                         </div>
                     </Link>
                     <div>
-                        <SerchBarContainer />
+                        <Searchbar />
                     </div>
                     <Link to="/login" className="login-button-link">
                         <div className="login-button">

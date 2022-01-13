@@ -5,7 +5,7 @@ class Api::SearchesController < ApplicationController
         @products = Product
                             .joins(:departments)
                             .where("departments.department = ?", params[:dep])
-                            .where("title like ?", "%#{params[:title].downcase}%")
+                            .where("title ILIKE ?", "%#{params[:title].downcase}%")
         if @products
             render "/api/products/index"
         else

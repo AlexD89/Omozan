@@ -1,19 +1,24 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
+import { requestSearchProducts } from "../../actions/search_actions";
 
 
 class Searchbar extends React.Component {
     constructor(props){
         super(props);
         this.state = ({
-            dep: "",
+            dep: "all",
             title: ""
         })
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state.dep)
-        console.log(this.state.title)
+        const {dep, title} = this.state;
+        this.props.history.push({ 
+            pathname: `/search/s`, 
+            state: this.props.location.pathname, 
+            search: `?dep=${dep}&title=${title}`});
     }
 
     render(){
@@ -42,4 +47,4 @@ class Searchbar extends React.Component {
     }
 }
 
-export default Searchbar;
+export default withRouter(Searchbar);

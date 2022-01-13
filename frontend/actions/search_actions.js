@@ -7,7 +7,7 @@ const receiveSearchProducts = searchProducts => ({
     searchProducts
 })
 
-export const requestSearchProducts = (dep, title) => dispatch => (
-    fetchSearchProducts(dep, title)
+export const requestSearchProducts = (query) => dispatch => (
+    fetchSearchProducts(query)
         .then(products => dispatch(receiveSearchProducts(products)))
 )
