@@ -11,6 +11,7 @@
 
 .checkout-page {
     padding: 30px;
+    height: calc(100vh - 220px);
     display: flex;
     justify-content: center;
     font-family: sans-serif;
@@ -18,17 +19,39 @@
 
 .checkout-msg-box {
     width: 100%;
-    height: 400px;
+    height: 60%;
     border-radius: 6px;
     padding: 20px;
     background-color: white;
+    display: flex;
+    justify-content: space-between;
+    h2 + p {
+        margin: 20px 0;
+    }
     h2{
         color: green;
-        font-size: 20px;
+        font-size: 25px;
         font-weight: 600;
-        margin-bottom: 5px;
     }
     b {
         font-weight: 600;
+    }
+    .checkout-img-box {
+        align-self: center;
+    }
+    .checkout-text {
+        width:50%;
+    }
+    
+}
+
+.estimated-delivery {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+    :first-child {
+        color: green;
+        font-weight: 600;
+        margin-bottom: 10px;
     }
 }

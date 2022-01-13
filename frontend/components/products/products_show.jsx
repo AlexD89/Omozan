@@ -72,6 +72,17 @@ class ProductsShow extends React.Component {
         }
     }
 
+    handlePurchase = (e) => {
+        e.preventDefault();
+
+        this.props.history.push({
+            pathname: "/checkout",
+            state: {
+                currentUser: this.props.currentUser
+            }
+        })
+    }
+
     getDecimals = (num) => {
         const n = num.toFixed(2);
         return n.slice(n.length-2)
@@ -137,7 +148,7 @@ class ProductsShow extends React.Component {
                             Add to Cart
                         </button>
                         <br />
-                        <button className="purchase-btn" onClick={e=>location.reload()}>Buy Now</button>
+                        <button className="purchase-btn" onClick={this.handlePurchase}>Buy Now</button>
                         <p><span className="blue">Secure transactions</span></p>
                         <table>
                             <tbody>

@@ -25,7 +25,8 @@ class CartIndex extends React.Component {
     handleCheckout = (e) => {
         e.preventDefault();
         const products = this.props.products;
-        const cartItems = Object.values(this.props.cartItems);
+        const cartItems = this.props.cartItems.map(item => item);
+        this.props.cartItems.forEach(item => this.props.deleteCartItem(item.id))
         this.props.history.push({
             pathname: "/checkout", 
             state: {
