@@ -2,7 +2,7 @@ import { connect } from "react-redux"
 import { requestSearchProducts } from "../../actions/search_actions"
 import SearchIndex from "./search_index"
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
     products: Object.values(state.entities.products)
 })
 

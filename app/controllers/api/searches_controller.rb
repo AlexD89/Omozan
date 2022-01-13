@@ -1,7 +1,6 @@
 class Api::SearchesController < ApplicationController
 
-    def index
-        
+    def index       
         @products = Product
                             .joins(:departments)
                             .where("departments.department = ?", params[:dep])

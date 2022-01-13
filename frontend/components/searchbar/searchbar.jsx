@@ -1,6 +1,5 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import { requestSearchProducts } from "../../actions/search_actions";
 
 
 class Searchbar extends React.Component {
@@ -10,6 +9,13 @@ class Searchbar extends React.Component {
             dep: "all",
             title: ""
         })
+    }
+
+    componentDidUpdate(oldProps){
+        if (oldProps.location.pathname != this.props.location.pathname || 
+            oldProps.location.search != this.props.location.search){
+            this.setState({title: ""})
+        }
     }
 
     handleSubmit = (e) => {
@@ -22,6 +28,7 @@ class Searchbar extends React.Component {
     }
 
     render(){
+        console.log(this.state)
         return(
             <div className="search-bar">
                 <form onSubmit={this.handleSubmit}>
@@ -38,6 +45,7 @@ class Searchbar extends React.Component {
                         <option value="kitchen">Kitchen</option>
                     </select>
                     <input
+                        value={this.state.title}
                         onChange={e=>this.setState({title: e.currentTarget.value})} 
                         type="text"/>
                     <input type="image" src={window.glassIconURL} alt="search-image" />

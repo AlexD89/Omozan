@@ -4,11 +4,7 @@ import ProductsIndexItem from "./product_index_item";
 class ProductsIndex extends React.Component {
 
     componentDidMount(){
-        if (this.props.match.params.departmentName === "all"){
-            this.props.requestAllProducts()
-        } else {
-            this.props.requestDepartmentProducts(this.props.match.params.departmentName)
-        }
+        this.props.requestDepartmentProducts(this.props.match.params.departmentName)
     }
 
     componentDidUpdate(prevProps){
