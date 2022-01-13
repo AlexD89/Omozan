@@ -32,6 +32,10 @@ class ProductsIndexItem extends React.Component {
         }
     }
 
+    cutTitle = (title, length) => (
+        title.length > length ? `${title.slice(0,length)}...`  : title
+    )
+
     render(){
         const { product } = this.props;
         return <div className="product-tab">
@@ -52,7 +56,7 @@ class ProductsIndexItem extends React.Component {
                     </div>
                     <br />
                     <div className={`score-box ${this.avgScore(product.avgScore)}`}></div>
-                    {product.title}
+                    {this.cutTitle(product.title,120)}
                 </div>
             </Link>
         </div>
