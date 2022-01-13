@@ -2,6 +2,12 @@
     background-color: white;
     padding: 20px 0;
     min-height: calc(100vh - 250px);
+    h1 {
+        margin-left: 40px;
+        font-family: sans-serif;
+        font-weight: 550;
+        font-size: 30px;
+    }
 }
 
 .product-grid {
@@ -11,11 +17,21 @@
 }
 
 .product-tab {
-    border: 2px solid rgb(211, 211, 211);
+    border-bottom: 2px solid rgb(211, 211, 211);
     width: 20%;
     height: 350px;
-    margin: -1px;
+    margin: 0 10px;
     padding: 20px;
+    overflow: hidden;
+}
+.product-score {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+    .score-count{
+        margin-left: 10px;
+        color: #007eb9;
+    }
 }
 
 .index-img-box {
@@ -36,4 +52,5 @@
 .product-tab h3 {
     font-size: 20px;
     font-weight: bold;
+    color: rgb(179, 50, 50);
 }

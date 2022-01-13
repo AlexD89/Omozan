@@ -12,23 +12,24 @@ class Searchbar extends React.Component {
     }
 
     componentDidUpdate(oldProps){
-        if (oldProps.location.pathname != this.props.location.pathname || 
-            oldProps.location.search != this.props.location.search){
-            this.setState({title: ""})
+        // if (oldProps.location.pathname != "/search/s") { 
+            // oldProps.location.search != this.props.location.search){
+        if (oldProps.location.pathname != this.props.location.pathname) { 
+                this.setState({title: ""})
         }
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
         const {dep, title} = this.state;
-        this.props.history.push({ 
-            pathname: `/search/s`, 
-            state: this.props.location.pathname, 
-            search: `?dep=${dep}&title=${title}`});
+        if (dep === 'all' && title.length === 0){
+            this.props.history.push('/')
+        } else {
+            this.props.history.push(`/search/s?dep=${dep}&title=${title}`)
+        }
     }
 
     render(){
-        console.log(this.state)
         return(
             <div className="search-bar">
                 <form onSubmit={this.handleSubmit}>

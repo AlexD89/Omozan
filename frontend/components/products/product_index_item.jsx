@@ -3,11 +3,6 @@ import { Link } from "react-router-dom";
 
 class ProductsIndexItem extends React.Component {
 
-    getDecimals = (num) => {
-        const n = num.toFixed(2);
-        return n.slice(n.length - 2)
-    }
-
     avgScore = score => {
         if (score >= 1 && score < 1.5) {
             return "avg-1";
@@ -37,26 +32,25 @@ class ProductsIndexItem extends React.Component {
     )
 
     render(){
-        const { product } = this.props;
+        const { product, reviews } = this.props;
         return <div className="product-tab">
             <Link to={`/products/${this.props.product.id}`}>
                 <div>
                     <div className="index-img-box">
                         <img src={product.imageURL} />
                     </div>
-                    <br />
-                    <div className="price-box">
-                        <span className="decimals">$</span>
-                        <h3>
-                            {Math.floor(product.price)}
-                        </h3>
-                        <span className="decimals">
-                            {this.getDecimals(product.price)}
-                        </span>
-                    </div>
-                    <br />
-                    <div className={`score-box ${this.avgScore(product.avgScore)}`}></div>
                     {this.cutTitle(product.title,120)}
+                    <div className="product-score">
+                        <div className={`score-box ${this.avgScore(product.avgScore)}`}></div>
+                        <div className="score-count">
+                            {product.reviewCount}
+                        </div>
+                    </div>
+                    <div className="price-box">
+                        <h3>
+                            ${product.price.toFixed(2)}
+                        </h3>
+                    </div>
                 </div>
             </Link>
         </div>
