@@ -89,7 +89,12 @@ class ProductsShow extends React.Component {
                     </figure>
                     <section className="show-description">
                         <h1>{product.title}</h1>
-                        <div className={`score-box ${this.avgScore(product.avgScore)}`}></div>
+                        <div className="product-score">
+                            <div className={`score-box ${this.avgScore(product.avgScore)}`}></div>
+                            <div className="score-count">
+                                {product.reviewCount} ratings
+                            </div>
+                        </div>
                         <div className="divider"></div>
                         <div className="price-box">
                             <span className="decimals">$</span>
