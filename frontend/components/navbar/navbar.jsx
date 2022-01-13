@@ -51,7 +51,7 @@ class Navbar extends React.Component {
                             <img src={window.logoURL} alt="logo" />
                         </div>
                     </Link>
-                    <div>
+                    <div className="searchbar">
                         <Searchbar />
                     </div>
                     <Link to="/login" className="login-button-link">
