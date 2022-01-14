@@ -17,34 +17,34 @@ This project is implemented with following technologies:
 # Functionality
 In Omozan App, users are able to:
 * Create a personal account or use a Demo User to explore webapp functionality
-  - Signup form
-    <img src="./app/assets/images/Readme/signup.png" width=50% height=50%>
-  - Login form
-    <img src="app/assets/images/Readme/login.png" width=50% height=50%>
-  - Demo user login
-    <img src="app/assets/images/Readme/demo_user.png" width=50% height=50%>
+  * Signup form
+    - <img src="./app/assets/images/Readme/signup.png" width=50% height=50%>
+  * Login form
+    - <img src="app/assets/images/Readme/login.png" width=50% height=50%>
+  * Demo user login
+    - <img src="app/assets/images/Readme/demo_user.png" width=50% height=50%>
 * Users can see featured products on a front page and browse products by category or view all products for sale
   - Featured products on splash page
-     <img src="./app/assets/images/Readme/featured_items.png" width=50% height=50%>
+     - <img src="./app/assets/images/Readme/featured_items.png" width=50% height=50%>
   - Index for computers department
-    <img src="./app/assets/images/Readme/category.png" width=50% height=50%>
+     - <img src="./app/assets/images/Readme/category.png" width=50% height=50%>
   - Departments navigation
-    <img src="./app/assets/images/Readme/category_list.png" width=50% height=50%>
+     - <img src="./app/assets/images/Readme/category_list.png" width=50% height=50%>
 * Users can view details and image of individual item and its reviews
   - Product details
-    <img src="./app/assets/images/Readme/details.png" width=50% height=50%>
+     - <img src="./app/assets/images/Readme/details.png" width=50% height=50%>
   - Product reviews
-    <img src="./app/assets/images/Readme/reviews.png" width=50% height=50%>
+     - <img src="./app/assets/images/Readme/reviews.png" width=50% height=50%>
 * Users can leave a custom review for products, later edit or delete those reviews. Each user can leave only one review for product
   - Create review button
-    <img src="./app/assets/images/Readme/create_review.png" width=50% height=50%>
+     - <img src="./app/assets/images/Readme/create_review.png" width=50% height=50%>
   - Review form
-    <img src="./app/assets/images/Readme/review_form.png" width=50% height=50%>
+     - <img src="./app/assets/images/Readme/review_form.png" width=50% height=50%>
 * Users can search for a specific product using the search bar in the header
   - Search bar
-    <img src="./app/assets/images/Readme/searchbar.png" width=50% height=50%>
+     - <img src="./app/assets/images/Readme/searchbar.png" width=50% height=50%>
   - Search Result
-    <img src="./app/assets/images/Readme/search_result.png" width=50% height=50%>
+     - <img src="./app/assets/images/Readme/search_result.png" width=50% height=50%>
 
 # Code snippets
 * Products index fetches products for given category and populates page with product index item by passing product data in each tab, where product item procces data and outputs iformation on given product
