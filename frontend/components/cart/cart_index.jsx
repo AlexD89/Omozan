@@ -30,8 +30,8 @@ class CartIndex extends React.Component {
         this.props.history.push({
             pathname: "/checkout", 
             state: {
-                products: products, 
-                cartItems: cartItems
+                numProducts: cartItems.length,
+                fromCart: true
         }})
     }
 

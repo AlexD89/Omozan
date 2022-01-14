@@ -6,6 +6,11 @@ class Checkout extends React.Component {
     render(){
         if(!this.props.location.state) {
             this.props.history.push('/')
+        } else if (this.props.location.state.fromCart &&
+            this.props.location.state.numProducts === 0) {
+            return <div className="empty-cart">
+                <img src={window.empty_cartURL}/>
+            </div>
         }
         const { currentUser } = this.props
         return(
