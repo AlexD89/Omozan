@@ -1,9 +1,13 @@
+.cart-blank{
+    min-height: calc(100vh - 250px);
+}
+
 .cart-page {
     display: flex;
     align-items: flex-start;
     padding: 20px;
     font-family: sans-serif;
-    min-height: calc(100vh - 280px);
+    min-height: calc(100vh - 290px);
 }
 
 .cart-index {
