@@ -117,7 +117,10 @@ class ProductsShow extends React.Component {
                             </span>
                         </div>
                         <div className="product-desc">
-                            {product.description}
+                            <h4>About this item</h4>
+                            <ul>
+                                {product.description.split("/////").map((block,i) => <li key={i}>{block}</li>)}
+                            </ul>
                         </div>
                     </section>
                     <aside className="show-purchase">
