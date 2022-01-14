@@ -33,7 +33,7 @@ class ProductsIndex extends React.Component {
                 return "Cellphones"
             case "pet_supplies":
                 return "Pet Supplies"
-            case "pet_supplies":
+            case "kitchen":
                 return "Kitchen"
             default:
                 return ""
