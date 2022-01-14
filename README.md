@@ -21,9 +21,18 @@ In Omozan App, users are able to:
   - ![login](app/assets/images/Readme/login.png)
   - ![Demouser](app/assets/images/Readme/demo_user.png)
 * Users can see featured products on a front page and browse products by category or view all products for sale
+  - ![featured](./app/assets/images/Readme/featured_items.png)
+  - ![category](./app/assets/images/Readme/category.png)
+  - ![category_list](./app/assets/images/Readme/category_list.png)
 * Users can view details and image of individual item and its reviews
+  - ![details](./app/assets/images/Readme/details.png)
+  - ![reviews](./app/assets/images/Readme/reviews.png)
 * Users can leave a custom review for products, later edit or delete those reviews. Each user can leave only one review for product
+  - ![create_review](./app/assets/images/Readme/create_review.png)
+  - ![review_form](./app/assets/images/Readme/review_form.png)
 * Users can search for a specific product using the search bar in the header
+  - ![searchbar](./app/assets/images/Readme/searchbar.png)
+  - ![search_result](./app/assets/images/Readme/search_result.png)
 
 # Code snippets
 * Products index fetches products for given category and populates page with product index item by passing product data in each tab, where product item procces data and outputs iformation on given product
