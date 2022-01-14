@@ -104,6 +104,7 @@ class SessionForm extends React.Component {
                 <div className="form-box">
                     <h1>{formType === "Login" ? "Sign-in" : "Create account"}</h1>
                     <form onSubmit={this.handleSubmit}>
+                        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"></input>
                         {formType === "Signup" ? (
                             <label><span>Your name</span>
                                 <br />

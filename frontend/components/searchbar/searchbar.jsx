@@ -33,6 +33,7 @@ class Searchbar extends React.Component {
         return(
             <div className="search-bar">
                 <form onSubmit={this.handleSubmit}>
+                    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"></input>
                     <select 
                         onChange={e=>this.setState({dep: e.currentTarget.value})}
                         defaultValue={"all"}>

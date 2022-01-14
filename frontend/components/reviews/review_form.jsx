@@ -47,6 +47,7 @@ class ReviewForm extends React.Component {
                         {product.title}
                     </div>
                     <form onSubmit={this.handleSubmit}>
+                        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"></input>
                         <label><h2>Overall rating</h2>
                             <div className="stars-radio">
                                 <input id="radio-1" type="radio" name="score" value={1} onClick={this.handleRadio} defaultChecked={this.state.score == 1}/>
