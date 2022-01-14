@@ -78,7 +78,7 @@ class Navbar extends React.Component {
                         <Link to="/departments/bed_bath"><li>Bed {"&"} Bath</li></Link>
                         <Link to="/departments/cellphones"><li>Cellphones</li></Link>
                         <Link to="/departments/pet_supplies"><li>Pet Supplies</li></Link>
-                        <Link to="/departments/pet_supplies"><li>Kitchen</li></Link>
+                        <Link to="/departments/kitchen"><li>Kitchen</li></Link>
                     </ul>
                 </div>
             </header>

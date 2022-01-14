@@ -21,9 +21,8 @@ class Splash extends React.Component {
 
 
     render(){
-        if (Object.values(this.props.products).length < 8) return null;
+        if (Object.values(this.props.products).length < 56) return null;
         const productArr = this.pickSplash();
-        console.log(productArr[0])
         const linkArr = Object.keys(this.props.products)
         const {products} = this.props
         return(
@@ -32,7 +31,6 @@ class Splash extends React.Component {
                 <ul className="splash-tabs">
                     <div className="splash-tab">
                         <h3>Macbook Air M1 2020</h3>
-                        {console.log(productArr)}
                         <Link to={`/products/${productArr[0].id}`}>
                             <div className="img-box">
                             <img src={productArr[0].imageURL} alt="" />
