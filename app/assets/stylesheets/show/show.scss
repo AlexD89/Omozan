@@ -1,5 +1,3 @@
-@import "./reviews.css";
-
 .show-page {
     background-color: white;
     min-height: 100vh;
@@ -7,7 +5,7 @@
     flex-direction: column;
     align-items: center;
     .divider {
-        border-top: 1xp solid #ddd;
+        border-top: 1px solid #ddd;
         width: 100%;
         margin-top: 5px;
         margin-bottom: 10px;

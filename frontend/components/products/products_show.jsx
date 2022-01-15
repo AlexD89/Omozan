@@ -89,7 +89,7 @@ class ProductsShow extends React.Component {
     }
 
     render(){
-        if (!this.props.product) return null;
+        if (!this.props.product) return <div className="show-page"></div>;
         const { product, reviews, formType } = this.props;
         const reviewsArr = Object.values(reviews);
         return(

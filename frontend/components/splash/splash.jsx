@@ -21,10 +21,8 @@ class Splash extends React.Component {
 
 
     render(){
-        if (Object.values(this.props.products).length < 56) return <div className="splash"></div>;
+        if (this.pickSplash().some(prod => prod === undefined)) return <div className="splash"></div>;
         const productArr = this.pickSplash();
-        const linkArr = Object.keys(this.props.products)
-        const {products} = this.props
         return(
             <div className="splah">
                 <img src={window.splashLogoURL} className="splash-background" />
