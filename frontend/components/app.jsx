@@ -17,10 +17,9 @@ import CheckoutContainer from "./checkout/checkout_container";
 const App = () => {
     const location = useLocation().pathname;
     return <div>
-        <header>
-            {location === "/login" || location === "/signup" ? "" : <NavbarContainer />}
-        </header>
         
+        {location === "/login" || location === "/signup" ? "" : <NavbarContainer />}
+                
         <Switch>
             <AuthRoute path="/login" component={LoginFormContainer}/>
             <AuthRoute path="/signup" component={SignupFormContainer}/>
@@ -35,9 +34,7 @@ const App = () => {
             <Route path='/' component={SplashContainer}/>
         </Switch>
 
-        <footer>
-            {location === "/login" || location === "/signup" ? "" : <Footer />}
-        </footer>
+        {location === "/login" || location === "/signup" ? "" : <Footer />}
         
     </div>
 
