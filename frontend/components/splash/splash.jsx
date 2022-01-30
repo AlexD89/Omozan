@@ -31,7 +31,7 @@ class Splash extends React.Component {
                         <h3>Macbook Air M1 2020</h3>
                         <Link to={`/products/${productArr[0].id}`}>
                             <div className="img-box">
-                            <img src={productArr[0].imageURL} alt="" />
+                            <img src={macbook_picURL} alt="macbook" />
                             </div>
                         </Link>
                         <Link to={`/products/${productArr[0].id}`}>
@@ -42,7 +42,7 @@ class Splash extends React.Component {
                         <h3>Vibe All-in-one Computer Real-time Interactive Whiteboard</h3>
                         <Link to={`/products/${productArr[1].id}`}>
                             <div className="img-box">
-                                <img src={productArr[1].imageURL} alt="" />
+                                <img src={vibe_picURL} alt="vibe" />
                             </div>
                         </Link>
                         <Link to={`/products/${productArr[1].id}`}>
@@ -53,7 +53,7 @@ class Splash extends React.Component {
                         <h3>WLIVE 2 Drawer Dresser</h3>
                         <Link to={`/products/${productArr[2].id}`}>
                             <div className="img-box">
-                                <img src={productArr[2].imageURL} alt="" />
+                                <img src={wlive_picURL} alt="wLive" />
                             </div>
                         </Link>
                         <Link to={`/products/${productArr[2].id}`}>
@@ -64,7 +64,7 @@ class Splash extends React.Component {
                         <h3>Meow Mix Original Choice </h3>
                         <Link to={`/products/${productArr[3].id}`}>
                             <div className="img-box">
-                                <img src={productArr[3].imageURL} alt="" />
+                                <img src={meow_picURL} alt="meow" />
                             </div>
                         </Link>
                         <Link to={`/products/${productArr[3].id}`}>
@@ -75,7 +75,7 @@ class Splash extends React.Component {
                         <h3>Moto G Power</h3>
                         <Link to={`/products/${productArr[4].id}`}>
                             <div className="img-box">
-                                <img src={productArr[4].imageURL} alt="" />
+                                <img src={motog_picURL} alt="motog" />
                             </div>
                         </Link>
                         <Link to={`/products/${productArr[4].id}`}>
@@ -86,7 +86,7 @@ class Splash extends React.Component {
                         <h3>iMucci Pink</h3>
                         <Link to={`/products/${productArr[5].id}`}>
                             <div className="img-box">
-                                <img src={productArr[5].imageURL} alt="" />
+                                <img src={imucci_picURL} alt="imucci" />
                             </div>
                         </Link>
                         <Link to={`/products/${productArr[5].id}`}>
@@ -97,7 +97,7 @@ class Splash extends React.Component {
                         <h3>Ball Regular Mouth</h3>
                         <Link to={`/products/${productArr[6].id}`}>
                             <div className="img-box">
-                                <img src={productArr[6].imageURL} alt="" />
+                                <img src={ball_picURL} alt="ball-regular" />
                             </div>
                         </Link>
                         <Link to={`/products/${productArr[6].id}`}>
@@ -108,7 +108,7 @@ class Splash extends React.Component {
                         <h3>New Bose SoundLink Flex</h3>
                         <Link to={`/products/${productArr[7].id}`}>
                             <div className="img-box">
-                                <img src={productArr[7].imageURL} alt="" />
+                                <img src={soundlink_picURL} alt="soundlink" />
                             </div>
                         </Link>
                         <Link to={`/products/${productArr[7].id}`}>

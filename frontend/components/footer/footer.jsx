@@ -15,15 +15,18 @@ const Footer = () => {
                 </div>
             </a>
             <div className="footer-links">
-                <a href="https://www.linkedin.com/in/alexander-dziuba-0426a0122">
+                <a href="https://www.linkedin.com/in/alexander-dziuba-0426a0122" target="_blank">
                     <img src={window.linkedin_picURL}/>
 
                 </a>
-                <a href="https://github.com/AlexD89">
+                <a href="https://github.com/AlexD89" target="_blank">
                     <img src={window.github_picURL}/>
                 </a>
-                <a href="https://www.facebook.com/alex.dziuba.3">
-                    <img src={window.facebook_picURL}/>
+                <a href="https://angel.co/u/alex-dziuba" target="_blank">
+                    <img src={window.angellist_picURL}/>
+                </a>
+                <a href="https://alexd89.github.io/Portfolio/" target="_blank">
+                    <img src={window.portfolio_picURL}/>
                 </a>
             </div>
             <div className="footer-logo">
