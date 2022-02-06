@@ -1,6 +1,7 @@
-# Omozan
+# <a href="https://omozan.herokuapp.com/#/" target="_blank">Omozan</a>
 
-  Omozan is a clone of Amazon - an e-commerce website where user can order goods from different categories. In Omozan app you can browse different categories of products. In order to add a product to the shopping cart - user needs to create an account and be signed in. Users are able to add, edit or delete their reviews for products. Once items are added to the shopping cart user can adjust quantity of the products in the cart remove them from the cart, or purchase said products. Users also can search app for specific products via search bar.
+  <a href="https://omozan.herokuapp.com/#/" target="_blank">Omozan</a> 
+  is a clone of Amazon - an e-commerce website where user can order goods from different categories. In Omozan app you can browse different categories of products. In order to add a product to the shopping cart - user needs to create an account and be signed in. Users are able to add, edit or delete their reviews for products. Once items are added to the shopping cart user can adjust quantity of the products in the cart remove them from the cart, or purchase said products. Users also can search app for specific products via search bar.
   
   
 # Thechnologies
