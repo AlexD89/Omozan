@@ -15,7 +15,7 @@ const Footer = () => {
                 </div>
             </a>
             <div className="footer-links">
-                <a href="https://www.linkedin.com/in/alexander-dziuba-0426a0122" target="_blank">
+                <a href="https://www.linkedin.com/in/alex-dziuba-0426a0122" target="_blank">
                     <img src={window.linkedin_picURL}/>
 
                 </a>
