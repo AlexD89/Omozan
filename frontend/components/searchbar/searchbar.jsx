@@ -54,6 +54,10 @@ class Searchbar extends React.Component {
         this.dropdown = this.buildDropdown(e.currentTarget.value);
     }
 
+    titleShortener = title => {
+        return title.slice(0,100);
+    }
+
 
     
     render(){
@@ -87,7 +91,7 @@ class Searchbar extends React.Component {
                                 <li 
                                     key={i}
                                     onClick={e => this.props.history.push(`/search/s?dep=all&title=${title}`)} 
-                                    className='dropdown-item'>{title}</li>
+                                    className='dropdown-item'>{this.titleShortener(title)}</li>
                             ))}
                         </ul>
                     </div>
