@@ -4,3 +4,10 @@ export const fetchSearchProducts = (query) => (
         url: `/api/searches/${query}`
     })
 )
+
+export const fetchTitles = () => (
+    $.ajax({
+        method: "GET",
+        url:`/api/searches/?titles=true`
+    })
+)

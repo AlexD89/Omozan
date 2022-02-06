@@ -7,13 +7,21 @@ class Searchbar extends React.Component {
         super(props);
         this.state = ({
             dep: "all",
-            title: ""
+            title: "",
+            allTitles: JSON.parse(window.localStorage.getItem('titles'))
         })
+        this.dropdown = [];
     }
 
-    componentDidUpdate(oldProps){
-        // if (oldProps.location.pathname != "/search/s") { 
-            // oldProps.location.search != this.props.location.search){
+    componentDidMount(){
+        if(!window.localStorage.getItem('titles')){
+            $.ajax({ url: `/api/searches/?titles=true` }).then(res => {
+                window.localStorage.setItem('titles', JSON.stringify(res))
+            })
+        }
+    }
+
+    componentDidUpdate(oldProps, oldState){
         if (oldProps.location.pathname != this.props.location.pathname) { 
                 this.setState({title: ""})
         }
@@ -29,12 +37,31 @@ class Searchbar extends React.Component {
         }
     }
 
+    buildDropdown = (str) => {
+        const titles = [];
+        if (str === '') return [];
+        for(let i = 0; i < this.state.allTitles.length-1; i++){
+            if(titles.length === 5) break;
+            if(this.state.allTitles[i].toLowerCase().includes(str.toLowerCase())) {
+                titles.push(this.state.allTitles[i])
+            }
+        }
+        return titles;
+    }
+
+    handleChangeTitle = e => {
+        this.setState({ title: e.currentTarget.value });
+        this.dropdown = this.buildDropdown(e.currentTarget.value);
+    }
+
+
+    
     render(){
         return(
             <div className="search-bar">
                 <form onSubmit={this.handleSubmit}>
                     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"></input>
-                    <select 
+                    <select
                         onChange={e=>this.setState({dep: e.currentTarget.value})}
                         defaultValue={"all"}>
                         <option value="all">All</option>
@@ -46,10 +73,23 @@ class Searchbar extends React.Component {
                         <option value="pet_supplies">Pet Supplies</option>
                         <option value="kitchen">Kitchen</option>
                     </select>
-                    <input
-                        value={this.state.title}
-                        onChange={e=>this.setState({title: e.currentTarget.value})} 
-                        type="text"/>
+                    <div className="search-field">
+                        <input
+                            // drop down apears only when there is something on the search bar
+                            onSelect={e => {
+                               if (this.state.title.length > 0) $('.dropdown').removeClass('hidden')
+                            }}
+                            onBlur ={e => $('.dropdown').addClass('hidden')}
+                            // -----                    
+                            value={this.state.title}
+                            onChange={this.handleChangeTitle} 
+                            type="text"/>
+                        <ul className="dropdown hidden">
+                            {this.dropdown.map((title, i) => (
+                                <li key={i} className='dropdown-item'>{title}</li>
+                            ))}
+                        </ul>
+                    </div>
                     <input type="image" src={window.glassIconURL} alt="search-image" />
                 </form>
             </div>

@@ -16,7 +16,7 @@
 
 .search-bar input[type="text"]  {
     height: 38px;
-    width: 100%;
+    width: calc(100% - 17px);
     border: transparent;
     padding-left: 15px;
     &:focus{

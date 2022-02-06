@@ -1,0 +1,23 @@
+.search-field {
+    width: 100%;
+    position: relative;
+}
+
+.dropdown {
+    position: absolute;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+.dropdown-item {
+    &:hover{
+        background-color: #ddd;
+        cursor: pointer;
+    }
+}
