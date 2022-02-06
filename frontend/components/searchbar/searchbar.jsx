@@ -8,16 +8,18 @@ class Searchbar extends React.Component {
         this.state = ({
             dep: "all",
             title: "",
-            allTitles: JSON.parse(window.localStorage.getItem('titles'))
+            allTitles: []
         })
         this.dropdown = [];
     }
 
     componentDidMount(){
         if(!window.localStorage.getItem('titles')){
-            $.ajax({ url: `/api/searches/?titles=true` }).then(res => {
-                window.localStorage.setItem('titles', JSON.stringify(res))
-            })
+            $.ajax({ url: `/api/searches/?titles=true` })
+                .then(res => {window.localStorage.setItem('titles', JSON.stringify(res))})
+                .then(() => this.setState({ allTitles: JSON.parse(window.localStorage.getItem('titles')) }))
+        } else {
+            this.setState({ allTitles: JSON.parse(window.localStorage.getItem('titles')) })
         }
     }
 
