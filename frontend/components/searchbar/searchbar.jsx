@@ -75,18 +75,19 @@ class Searchbar extends React.Component {
                     </select>
                     <div className="search-field">
                         <input
-                            // drop down apears only when there is something on the search bar
                             onSelect={e => {
                                if (this.state.title.length > 0) $('.dropdown').removeClass('hidden')
                             }}
-                            onBlur ={e => $('.dropdown').addClass('hidden')}
-                            // -----                    
+                            onBlur={() => window.setTimeout(() => $('.dropdown').addClass('hidden'),200)}
                             value={this.state.title}
                             onChange={this.handleChangeTitle} 
                             type="text"/>
                         <ul className="dropdown hidden">
                             {this.dropdown.map((title, i) => (
-                                <li key={i} className='dropdown-item'>{title}</li>
+                                <li 
+                                    key={i}
+                                    onClick={e => this.props.history.push(`/search/s?dep=all&title=${title}`)} 
+                                    className='dropdown-item'>{title}</li>
                             ))}
                         </ul>
                     </div>
