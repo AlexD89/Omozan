@@ -13,7 +13,8 @@
   },
   "scripts": {
     "postinstall": "webpack",
-    "webpack": "webpack --watch --mode=development"
+    "webpack": "webpack --watch --mode=development",
+    "start": "webpack"
   },
   "repository": {
     "type": "git",
